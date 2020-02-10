@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1532654924 source:c:\ohlone\comsc_165\finalproject\customeraccountprogram.cpp
+	<iostream>
+	<fstream>
+	<cstdlib>
+	"CustomerAccountProgram.h"
+	"CustomerAccount.h"
+
+1532654774 c:\ohlone\comsc_165\finalproject\customeraccountprogram.h
+
+1532654776 c:\ohlone\comsc_165\finalproject\customeraccount.h
+
+1532654936 source:c:\ohlone\comsc_165\finalproject\main.cpp
+	<iostream>
+	<fstream>
+	"CustomerAccountProgram.h"
+	"CustomerAccount.h"
+

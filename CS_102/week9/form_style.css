@@ -1,0 +1,19 @@
+body {
+	background-color:  grey;
+}
+
+h1 {
+	color: blue;
+	text-align: center;
+}
+
+form {
+	align-content: center;
+	align-items: center;
+	text-align: center;
+	color: white;
+}
+
+p {	
+	color: white;
+}

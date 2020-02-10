@@ -1,0 +1,234 @@
+#include <iomanip>
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <cctype>	//for isalnum()
+#include <sstream>	//to convert strings to float with istringstream() 
+using namespace std;
+
+struct FIELDS 
+{
+	string name;
+	string value;
+};
+ 
+// Prototypes
+int how_many (string);
+ 
+FIELDS * create_FIELDS_array (int);
+string * create_array (int);
+int * create_int_array (int);
+void parse(string, FIELDS []);
+string param(string, FIELDS []);
+void create_form();
+
+string qs(getenv("QUERY_STRING"));	//data past with via the URL with the GET method 
+const int cnt = how_many(qs);	//how many = signs in qs - counts the form fields
+
+
+int main()
+{
+	cout << "Content-type:text/html\n\n";	//protocol first output to a browser
+	cout << "<pre>" << endl;				//open tag simulates terminal mode on browser
+
+if(cnt == 0) {
+	create_form();
+	return 0;
+} else {
+	float LOAN_AMOUNT=0; //loan amt  
+	float INT_RATE=0; //interest rate
+	int TERM_YEARS=0; //loan term in years
+	char quit = 'Q'; //determines if user wants to quit
+		
+	cout << "debug with qs: " << qs << "<p>" << endl;
+	
+	FIELDS * name_value_pairs = create_FIELDS_array(cnt); 	
+	parse(qs, name_value_pairs);
+	
+	//cout << "debug print for name_value_pairs array: " << endl << "<br>";
+	for (int index = 0; index<cnt; index++) {
+		cout << "name: " << name_value_pairs[index].name << " ";
+		cout << "value: " << name_value_pairs[index].value << endl << "<br>";
+ 	}
+
+		string s_LOAN_AMOUNT = param("LOAN_AMOUNT", name_value_pairs);
+		string s_INT_RATE = param("INT_RATE", name_value_pairs);		
+		string s_TERM_YEARS = param("TERM_YEARS", name_value_pairs);
+
+	cout << "debug with LOAN_AMOUNT: " << s_LOAN_AMOUNT << "<br>" << endl;
+
+		//convert strings to numbers using istringstream function from <sstream> lib     
+		float LOAN;
+		istringstream(s_LOAN_AMOUNT) >> LOAN; 
+		float RATE;
+		istringstream(s_INT_RATE) >> RATE;
+		int YEARS;
+		istringstream(s_TERM_YEARS) >> YEARS;
+
+		float monthlyInterest;
+		int numberOfPayments;
+		float payment;
+		float balance;
+ 
+	//calculate values
+       
+		monthlyInterest=RATE/12;
+		numberOfPayments=YEARS*12;
+       
+		payment=(LOAN*
+		pow(monthlyInterest + 1, numberOfPayments) * monthlyInterest)/(pow(monthlyInterest + 1, numberOfPayments) - 1);
+ 
+       
+	//output results
+		cout<<fixed<<setprecision(2) <<"\n";
+		cout<<"Your monthly payment for " << YEARS <<" years\n";
+		cout<<"for an Interest Rate of " << RATE <<"%\n";
+		cout<<"on a Loan Amount of $" << LOAN <<":\n" <<"\n";
+		cout<<"$" <<payment <<" a month\n" <<"\n";
+        
+		// use <b> tag (bold), just for fun
+		cout<<"<b>Thanks for using this ONLINE mortgage calculator!\n</b>";
+		cout << "</pre>" << endl;		//close the pre tag
+
+		return 0;
+	}
+}
+
+//*******************************************
+// how_many()
+// This will determine how fields the html form has by counting = signs in query_string
+//*******************************************
+
+int how_many(string f_qs) {
+
+	int pos = 0;
+	int count = 0;
+	int start_pos = 0;
+	
+	do {
+		pos = f_qs.find("=", start_pos);
+		if (pos != string::npos) {
+			count++;
+			start_pos = pos + 1;
+		}
+	} while (pos != string::npos);
+	return count;
+}
+
+//*******************************************
+// create_FIELDS_array 
+// Creates a dynamic array of type FIELDS 
+//*******************************************
+FIELDS * create_FIELDS_array (int f_count)
+{
+	FIELDS * address;
+	address = new FIELDS[f_count];
+	return (address);
+}
+
+//*******************************************
+// create_array 
+// Creates a dynamic array of type string 
+//*******************************************
+string * create_array (int count)
+{
+	string *address;
+	address = new string[count];
+	return (address);
+}
+
+//*******************************************
+// create_int_array 
+// Creates a dynamic array of type string 
+//*******************************************
+int * create_int_array (int count)
+{
+	int *address;
+	address = new int[count];
+	return (address);
+}
+
+//*******************************************
+// parse()
+// This will separate the name/value pairs found after the ? in the URL
+//*******************************************
+void parse (string qs, FIELDS f_name_value_pairs [])
+{
+	//?first=fred&last=flint
+	// 012345678901234567890
+	
+	string name, value;
+	int start_pos = 0, pos; 
+	for (int counter=0; counter < cnt; counter++) {
+		pos = qs.find("=", start_pos);	//was missing start_pos
+		name = qs.substr(start_pos, pos - start_pos); 
+		f_name_value_pairs[counter].name = name;
+		//cout << "name: " << name << "<br>" << endl; 
+		start_pos = pos + 1; 
+		pos = qs.find("&", start_pos);
+		if (pos == string::npos) {
+			pos = qs.length();
+		}
+		value = qs.substr(start_pos, pos - start_pos); 
+		f_name_value_pairs[counter].value = value;
+		//cout << "value: " << value << "<br>" << endl; 
+		start_pos = pos + 1; 
+	} 
+	//value = qs.substr(startPos, qs.length() - startPos); 
+	//cout << "value: " << value << endl;
+}
+
+//*******************************************
+// param()
+// This will put the info into a new field
+// on the web form
+//*******************************************
+string param(string lookUp, FIELDS f_name_value_pairs[] )
+{	
+	string f_value;
+	bool found = false;
+	for (int index=0; index < cnt; index++)
+	{
+		if(f_name_value_pairs[index].name != lookUp);
+			//do nothing
+		else {
+			found = true;
+			f_value = f_name_value_pairs[index].value;
+		}
+	} 
+	if (found) 
+		return f_value;
+	else 
+		return "";
+}
+
+//*******************************************
+// create_form()
+// This will create a survey question
+//*******************************************
+void create_form() {
+	cout << "<html><head><title>Mortgage Calculator</title></head>" <<
+			"<body>\n" <<
+			"<h3>Mortgage Calculator</h3>" <<
+			"<form action=\"mortgage_calc.cgi\" method=\"GET\">\n" <<
+			"		<label for=\"LOAN_AMOUNT\">Loan Amount:</label>\n" <<
+			"		<input name=\"LOAN_AMOUNT\" type=\"input\"></td><br>\n" <<
+			"		<label for=\"INT_RATE\">Interest Rate:</label>\n" <<
+			"		<input name=\"INT_RATE\" type=\"input\"></td><br>\n" <<
+			"		<label for=\"TERM_YEARS\">Length in Years:</label>\n" <<
+			"		<input name=\"TERM_YEARS\" type=\"input\"></td><br>\n" <<
+			"	<p><input type=\"submit\" value=\"Submit\">\n" <<
+			"</form>\n" <<
+			"</body>\n" << 
+			"</html>\n";
+			
+
+
+}
+
+
+
+
+
+
+

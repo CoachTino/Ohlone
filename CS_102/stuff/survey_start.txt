@@ -1,0 +1,27 @@
+WebApps wo;
+void build_form();
+int main()
+{
+	const int cnt = wo.get_cnt();
+	if (cnt != 0) {
+		cout << "debug with cnt != 0<br>" << endl;
+	}else {
+		build_form();
+	}
+	return 0;
+}
+////////////functions/////////////
+void build_form () {
+	cout << "<html><head><title>Survey Vote</title></head>" <<
+			"<body>\n" <<
+			"<form action=\"survey.cgi\" method=\"GET\">\n" <<
+			"	Will it be a Yes or a No?<br>\n" <<
+			"		<label for=\"vote\">Yes</label>\n" <<
+			"		<input name=\"vote\" value=\"Y\" type=\"radio\"></td><br>\n" <<
+			"		<label for=\"vote\">No</label>\n" <<
+			"		<input name=\"vote\" value=\"N\" type=\"radio\"></td><p>\n" <<		
+			"	<p><input type=\"submit\" value=\"Submit\">\n" <<
+			"</form>\n" <<
+			"</body>\n" << 
+			"</html>\n";
+}

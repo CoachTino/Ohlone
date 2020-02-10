@@ -1,0 +1,31 @@
+WebApps wo;					//make the wo object global
+FileApps fo("survey.txt");	//fo for file object
+void build_form();
+void save_data_line(string);
+
+string prepare_vote(int);
+
+int main()
+{		
+	const int cnt = wo.get_cnt();
+	if (cnt != 0) {
+		cout << "debug with cnt != 0<br>" << endl;
+			//call function to prepare vote 
+		string data_line = prepare_vote(cnt);
+			cout << "debug with data_line: " << data_line << "<br>" << endl;
+			//save_data_line() appends the vote to the end of survey.txt
+		fo.save_data_line(data_line);
+			//read_data() opens survey.txt and populates array data_array[]
+		fo.read_data ();
+			cout << "debug past read_data()<br>" << endl;
+			//array data_array[] is now ours (contains all of the votes as strings
+		string* data_array = fo.get_data_array();
+		cout << "From main() debug with 1th element: " << data_array[0] << 
+					"<br>" << endl;		
+		// End of the need for FileApps.h under this if statement
+		
+	}else {
+		build_form();
+	}
+	return 0;
+}

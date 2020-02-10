@@ -1,0 +1,67 @@
+class WebApps {
+	public:			//public access specifier. 	
+		WebApps (){	//constructor
+		
+			cout << "Content-type:text/html\n\n";	//get ready to print on browser
+			set_qs(getenv("QUERY_STRING")); 		//save string to private qs
+				//cout << "debug with get_qs: " << get_qs();	//testing functions
+			set_cnt(how_many(get_qs()));
+				//cout << "<br>debug with get_cnt: " << get_cnt();//testing functions			
+		}
+	
+		void set_qs(string f_getenv) { ...}
+
+		void set_cnt(int f_how_many) { ...	}
+
+		string get_qs() { ... }
+		 
+		int get_cnt() { ... }
+
+		/////////////////////////////////////////////////////
+		// how_many()
+		// This will count and return how many = signs in the QUERYSTRING
+		////////////////////////////////////////////////////
+		int how_many (string f_qs)
+		{
+			//initialize variables
+
+			do {
+				...
+			} while (pos != string::npos);
+			returns the count or 0 if f_qs is empty
+		}
+
+
+		////////////////////////////////////////////////////
+		//create_array  
+		// Creates a dynamic array
+		////////////////////////////////////////////////////
+
+		FIELDS * create_array (int f_cnt)
+		{ modify function from last assignment }
+		
+		/////////////////////////////////////////////
+		// parse()
+		// This will separate the name/value pairs found after the ? in the URL
+		/////////////////////////////////////////////
+
+		void parse (string f_qs, FIELDS f_name_value_pairs [])
+		{
+			existing code
+		}
+		
+		/////////////////////////////////////////////
+		// param()
+		// Will receive the value for any given form field
+		/////////////////////////////////////////////
+
+		string param(string lookUp, FIELDS f_name_value_pairs [], int f_cnt)
+		{	
+			existing code
+		}
+		
+	private:				// private access specifier
+		string qs;			// holds the QUERY_STRING
+		int cnt;			// holds the number of fields found from the form
+
+};

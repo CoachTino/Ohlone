@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1529911588 source:c:\ohlone\comsc_165\lab1\annualpay\main.cpp
+	<iostream>
+	"EmployeePay.h"
+
+1529911620 c:\ohlone\comsc_165\lab1\annualpay\employeepay.h
+	<string>
+
+1529911616 source:c:\ohlone\comsc_165\lab1\annualpay\employeepay.cpp
+	"EmployeePay.h"
+	<iostream>
+

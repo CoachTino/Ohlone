@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1530490433 source:c:\ohlone\comsc_165\lab2\elementshifter\elementshifter.cpp
+	"ElementShifter.h"
+	<iostream>
+
+1530490533 c:\ohlone\comsc_165\lab2\elementshifter\elementshifter.h
+
+1530490511 source:c:\ohlone\comsc_165\lab2\elementshifter\main.cpp
+	"ElementShifter.h"
+	<iostream>
+

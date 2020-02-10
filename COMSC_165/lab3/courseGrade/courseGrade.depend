@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1531081870 source:c:\ohlone\comsc_165\lab3\coursegrade\coursegrade.cpp
+	"CourseGrade.h"
+	<iostream>
+	<string>
+
+1531082557 c:\ohlone\comsc_165\lab3\coursegrade\coursegrade.h
+	<string>
+
+1531080640 source:c:\ohlone\comsc_165\lab3\coursegrade\main.cpp
+	"CourseGrade.h"
+	<iostream>
+	<string>
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1529904379 source:c:\ohlone\comsc_165\lab1\sortingorders\sortorder.cpp
+	"SortOrder.h"
+	<iostream>
+
+1529904403 c:\ohlone\comsc_165\lab1\sortingorders\sortorder.h
+
+1529904140 source:c:\ohlone\comsc_165\lab1\sortingorders\main.cpp
+	<iostream>
+	"SortOrder.h"
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1530478324 source:c:\ohlone\comsc_165\lab2\median\main.cpp
+	"Median.h"
+	<iostream>
+
+1530478280 c:\ohlone\comsc_165\lab2\median\median.h
+

@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1532326938 source:c:\ohlone\comsc_165\lab5\linkedlist\linkedlist.cpp
+	<iostream>
+	"ListNode.h"
+	"LinkedList.h"
+
+1532326028 c:\ohlone\comsc_165\lab5\linkedlist\listnode.h
+
+1532326764 c:\ohlone\comsc_165\lab5\linkedlist\linkedlist.h
+	"ListNode.h"
+
+1532326867 source:c:\ohlone\comsc_165\lab5\linkedlist\main.cpp
+	<iostream>
+	"ListNode.h"
+	"LinkedList.h"
+

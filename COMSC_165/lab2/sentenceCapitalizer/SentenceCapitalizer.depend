@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1530553680 source:c:\ohlone\comsc_165\lab2\sentencecapitalizer\main.cpp
+	"SentenceCapitalizer.h"
+	<iostream>
+	<cctype>
+
+1530553680 c:\ohlone\comsc_165\lab2\sentencecapitalizer\sentencecapitalizer.h
+
+1530553680 source:c:\ohlone\comsc_165\lab2\sentencecapitalizer\sentencecapitalizer.cpp
+	"SentenceCapitalizer.h"
+	<iostream>
+	<cctype>
+

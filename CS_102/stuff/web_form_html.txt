@@ -1,0 +1,14 @@
+<html><head><title>Three Form Fields</title></head>
+<body>
+	<form action="retrieve_form_start.cgi" method="GET">
+		Use one word per field:<br><br>
+		First Name:<br>
+			<input type="text" name="first"><p>
+		Last Name<br>
+			<input type="text" name="last"><p>
+		Favorite Color<br>
+			<input type="text" name="color">
+		<p><input type="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include <stdint.h>
+#include <memory.h>
+
+int main(int argc, char** argv)
+{
+int8_t a = -256;
+printf("a : %x\n", (uint16_t)a);
+/*
+uint32_t a = 10; // memory allocation on stack
+uint32_t c = 60;
+uint64_t b = 40;
+uint8_t *p = NULL;
+
+p = (uint8_t*)malloc(1024*1024); //Heap
+
+printf("Number of arguments pass : %d \n", argc);
+printf("size of a %d\n", sizeof(a));
+printf("size of b %d\n", sizeof(b));
+printf("Address of a %p\n", &a);
+printf("Address of b %p\n", &b);
+printf("Address of c %p\n", &c);
+printf("Address of g %p\n", &g);
+printf("Address of main %p\n", main);
+printf("Address of heap %p\n", p);
+free(p);
+*/
+return 0;
+}

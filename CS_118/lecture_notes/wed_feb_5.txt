@@ -1,0 +1,56 @@
+huggman coding - file compression lossy and lossless 
+
+
+											use space - all applications run in user space (word, excelt, etc)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+											kernel space - clib being exported to user space - kernal makes hardware usable - 
+
+
+
+											cpu bound applications - system clock -
+											i/o bound applications - web servers - word - 
+
+
+							protocol - set method of communication between two or more computing entities 
+
+							interrupt - transfer user call to kernal call
+							each application in user space opens three file headers, standard input standard output standard error
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+cpu has two busses - address bus and data buss
+
+rovert love has a book on kernel - good read
+
+
+take hexadecimal string and convert it to decimal
+
+try to memorize cpu registers
+
+little and big endian
+
+
+
+int a = 1
+int a = hex
+uint8_t* p = &a;
+
+
+only need 2 ifs
+if('0' -> 'a')
+if('a' -> 'f')
+then subtract 48
+0 in ascii is 48
+
+use string and constant char"12321"

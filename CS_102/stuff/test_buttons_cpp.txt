@@ -1,0 +1,48 @@
+// File: test_buttons.cpp
+// Author: 
+// cs102 Online
+// Date: 
+// Description: Example to create form buttons and retrieve submit results 
+
+#include <iostream>	
+#include <cstdlib>	// for getenv
+#include <string>
+using namespace std;
+
+void create_form();
+
+string qs(getenv("QUERY_STRING")); 
+
+int main()
+{
+	cout << "Content-type:text/html\n\n"; 
+	if (qs.length() != 0) {
+		cout << "debug with qs: " << qs << "<p>" << endl;
+		create_form();
+	}
+	else {
+
+		create_form();
+	}
+    return 0;
+}
+
+//*******************************************
+// create_form()
+// This will create a survey question
+//*******************************************
+void create_form() {
+	cout << "<html><head><title>Survey Vote</title></head>" <<
+			"<body>\n" <<
+			"<form action=\"test_buttons.cgi\" method=\"GET\">\n" <<
+			"	Will it be a Yes or a No?<br>\n" <<
+			"		<label for=\"vote\">Yes</label>\n" <<
+			"		<input name=\"vote\" value=\"Y\" type=\"radio\"></td><br>\n" <<
+			"		<label for=\"vote\">No</label>\n" <<
+			"		<input name=\"vote\" value=\"N\" type=\"radio\"></td><p>\n" <<		
+			"	<p><input type=\"submit\" value=\"Submit\">\n" <<
+			"</form>\n" <<
+			"</body>\n" << 
+			"</html>\n";
+
+}

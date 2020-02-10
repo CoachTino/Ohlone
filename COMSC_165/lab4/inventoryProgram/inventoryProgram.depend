@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1531715316 source:c:\ohlone\comsc_165\lab4\inventoryprogram\inventoryprogram.cpp
+	"InventoryProgram.h"
+	"InventoryItem.h"
+	<iostream>
+	<string>
+	<fstream>
+	<cstdlib>
+
+1531715310 c:\ohlone\comsc_165\lab4\inventoryprogram\inventoryprogram.h
+	"InventoryItem.h"
+	<fstream>
+
+1531715306 source:c:\ohlone\comsc_165\lab4\inventoryprogram\main.cpp
+	"InventoryProgram.h"
+	"InventoryItem.h"
+	<iostream>
+	<string>
+	<fstream>
+
+1531715360 c:\ohlone\comsc_165\lab4\inventoryprogram\inventoryitem.h
+	<string>
+

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1531102857 source:c:\ohlone\comsc_165\lab3\carclass\car.cpp
+	"Car.h"
+	<iostream>
+	<string>
+
+1531102920 c:\ohlone\comsc_165\lab3\carclass\car.h
+	<string>
+
+1531103808 source:c:\ohlone\comsc_165\lab3\carclass\main.cpp
+	"Car.h"
+	<iostream>
+	<string>
+

@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1531068192 source:c:\ohlone\comsc_165\lab3\soccerscores\main.cpp
+	<iostream>
+	"SoccerScores.h"
+	<iomanip>
+	<string>
+
+1531068238 c:\ohlone\comsc_165\lab3\soccerscores\soccerscores.h
+	<string>
+
+1531068132 source:c:\ohlone\comsc_165\lab3\soccerscores\soccerscores.cpp
+	"SoccerScores.h"
+	<iostream>
+	<iomanip>
+	<string>
+

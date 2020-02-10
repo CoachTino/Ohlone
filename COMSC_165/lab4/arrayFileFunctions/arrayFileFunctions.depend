@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1531546083 source:c:\ohlone\comsc_165\lab4\arrayfilefunctions\filefunction.cpp
+	"FileFunction.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1531546669 c:\ohlone\comsc_165\lab4\arrayfilefunctions\filefunction.h
+	<fstream>
+
+1531546052 source:c:\ohlone\comsc_165\lab4\arrayfilefunctions\main.cpp
+	"FileFunction.h"
+	<iostream>
+	<fstream>
+

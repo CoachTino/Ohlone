@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1530510319 source:c:\ohlone\comsc_165\lab2\backwardstring\backwardstring\main.cpp
+	"BackwardString.h"
+	<iostream>
+
+1530511263 c:\ohlone\comsc_165\lab2\backwardstring\backwardstring\backwardstring.h
+
+1530510216 source:c:\ohlone\comsc_165\lab2\backwardstring\backwardstring\backwardstring.cpp
+	"BackwardString.h"
+	<iostream>
+

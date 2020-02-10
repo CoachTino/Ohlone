@@ -1,0 +1,95 @@
+// Name: top_div_array.cpp
+// Description: 
+// This app inputs sales for four regional division and displays the highest.
+// To accomplish this, use two arrays of equal length - one for sales and the 
+// other for the divisions names.
+// The data in these arrays will be positioned so that the divisions will share the same
+// indexes in both arrays. 
+// Use three functions: one for input, one for determining highest sales, and one for
+// displaying results.
+
+#include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std; 
+
+
+// Function Prototypes
+// These prototypes already contain the proper parameters -
+// 		match your work accordingly 
+
+void populate_div_sales(float[], string[], int);
+int findHighest (float[], int);				// this function will now return the index for
+											// the highest division sales
+void print_result(float[], string[], int);	// displays result based on the index of 
+											// highest division sales
+
+
+//*************************************************
+//************ main *******************************
+//*************************************************
+main ()
+{
+	int top_div_index = 0;	// will be assigned the index of the top division sales
+	float div_sales[4];		// array holding the divisions' sales amounts
+	string div_regions[4];	// array holding division names
+	
+	// populate div_regions array
+	div_regions[0] = "Northeast";
+	div_regions[1] = "Southeast";
+	// etc.
+	
+	populate_div_sales(div_sales, div_regions, 4);	// params are already given to 
+													// help get started
+	
+	// leave debug statement in final product
+	cout << "debug print for array div_sales_array" << endl;
+	for (int i=0; i<4; i++) {
+		cout << div_sales[i] << endl;
+	}	
+	
+	top_div_index = findHighest(..parameters here..); //will no longer prints the result
+
+	// leave debug statement in final product
+	cout << "debug for top_div_index: " << top_div_index << endl;
+	
+	print_result(..parameters here..);
+
+	return 0;
+}
+
+//************ subroutine definitions below *******************
+
+//*************************************************
+//************ populate_div_sales *****************
+//*************************************************
+// The params for the function definition are given to help get started 
+//		- note the f_ preceding variable names. Use
+// 		this convention to help relate and contrast both the calling and the 
+//		receiving variables.
+void populate_div_sales(float f_div_sales[], string f_div_regions[], int f_size )
+{
+	// loop to input quarterly sales
+}
+
+//*************************************************
+//************ findHighest ************************
+//*************************************************
+int findHighest (..add parameters..)
+{
+	float greatestSalesAmount = 0;
+	int save_index;
+	
+	// Use a 'for' loop to help determine the array element with highest sales and
+	// saves the winner's index to save_index
+	
+	return save_index;
+}
+
+//*************************************************
+//************ print_result ***********************
+//*************************************************
+void print_result(..add parameters..) 
+{
+	// Be sure to include the division name and quarterly Sales in the final display
+}

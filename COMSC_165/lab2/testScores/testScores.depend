@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1530470146 source:c:\ohlone\comsc_165\lab2\testscores\main.cpp
+	<iostream>
+	"TestScores.h"
+	<string>
+
+1530470138 c:\ohlone\comsc_165\lab2\testscores\testscores.h
+	<string>
+
+1530347108 source:c:\ohlone\comsc_165\lab2\testscores\testscores.cpp
+	"TestScores.h"
+	<iostream>
+	<string>
+	<iomanip>
+

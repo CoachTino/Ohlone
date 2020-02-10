@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1551313931 source:c:\ohlone\cs_124\cs_124\lab_2\lab_2\main.cpp
+	<iostream>
+	"arrayListType.h"
+
+1551314109 c:\ohlone\cs_124\cs_124\lab_2\lab_2\arraylisttype.h
+	<iostream>
+	<cassert>
+
+1551313931 source:c:\ohlone\cs_124\cs_124\lab_2\main.cpp
+	<iostream>
+	"arrayListType.h"
+
+1551314233 c:\ohlone\cs_124\cs_124\lab_2\arraylisttype.h
+	<iostream>
+	<cassert>
+
