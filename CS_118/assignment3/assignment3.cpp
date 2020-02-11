@@ -9,40 +9,51 @@ Description: Write an C++/C function to convert a hexadecimal string to a decima
 
 #include <iostream>
 #include <stdio.h>
-#include <string>
 
 using namespace std;
 
-/*
-only need 2 ifs
-if('0' -> 'a')
-if('a' -> 'f')
-then subtract 48
-0 in ascii is 48
-
-use string and constant char"12321"
-
-*/
-
 	// declare global variables
+	// const cstring
 	const char a[4] = "cat";
-	const char* b = "duh";
-	string c = "coolstorybro";
+	const char b[6] = {'0', '1', '2', '3', '4', '\0'};
+	const char* c = "duh";
 
-	uint32_t d = a[0] - 48; 
-	uint32_t e = b[0] - 48; 
-
+	// function prototype
+	int cstringPointerToHex(const char*);
+	void printCStringInHexAndDecimal(const char*, uint x);
 
 	// driver code
 	int main(){
 
-		printf("trying it out: %s\n", "weirdtexthere");
-		printf("a = %s\n", a);
-		printf("b = %s\n", b);
-		cout << c << endl;
-
-		printf("d = %x\n", d);
-		printf("e = %x\n", e);
+		printCStringInHexAndDecimal(a,cstringPointerToHex(a));
+		printCStringInHexAndDecimal(b,cstringPointerToHex(b));
+		printCStringInHexAndDecimal(c,cstringPointerToHex(c));
 
 		return 0;
+	}
+
+	// function definition 
+	// takes a cstring and sums the ascii value 
+	// of the char in each element
+	int cstringPointerToHex(const char* tempString){
+
+		uint tempInt = 0;
+		for(int i = 0; i < 7; i++){
+
+			if(tempString[i] >= 32){
+
+				tempInt += tempString[i];
+			}
+		}
+		return tempInt;
+	}
+
+	// function definition
+	// takes a cstring and an integer as arguments and prints 
+	// the cstring value, in hex, and in decimal to the console
+	void printCStringInHexAndDecimal(const char* string, uint x){
+
+		printf("cstring = %s\n", string);
+		printf("cstring in hex = %x\n", x);
+		printf("cstring in decimal = %d\n\n", x);
 	}
