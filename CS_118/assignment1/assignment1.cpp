@@ -20,7 +20,7 @@ using namespace std;
     uint32_t d = 0x000049C1;    // 18881           = 0x000049C1 = 0000 0000 0000 0000 0100 1001 1100 0001
     uint32_t e = 0x00000080;    // 128             = 0x00000080 = 0000 0000 0000 0000 0000 0000 1000 0000
     uint32_t f = 0xFFFFFFFF;    // 4,294,967,295   = 0xFFFFFFFF = 1111 1111 1111 1111 1111 1111 1111 1111
-
+    const float decimal = 7.75; // 7.75            = 0x00000000 = 0000 0000 0000 0000 0000 0111.0100 1011
 
     // function prototypes
     bool checkBit(uint32_t,  uint32_t);
@@ -30,7 +30,7 @@ using namespace std;
     int main(){
 
       checkBit(d,e);
-      cout << "There are " << countHighBits(f) << " set bits.\n";
+      cout << "There are " << countHighBits(decimal) << " set bits.\n";
 
     return 0;
     }
