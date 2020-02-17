@@ -7,7 +7,6 @@ Description: Write C/C++ code to extract exponent,
 			 mantissa and sign bit from a 32 bit float number.
 */
 
-#include <iostream>
 #include <stdio.h>
 #include <stdint.h>
 
