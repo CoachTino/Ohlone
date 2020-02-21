@@ -1,5 +1,5 @@
 /*
-Program: assignment3.cpp
+Program: assignment4.cpp
 Author: Valentino Lei'a
 Online Class: cs118
 Semester: Spring 2020
@@ -7,7 +7,6 @@ Description: Write C/C++ code to extract exponent,
 			 mantissa and sign bit from a 32 bit float number.
 */
 
-#include <iostream>
 #include <stdio.h>
 #include <stdint.h>
 
@@ -17,9 +16,9 @@ Description: Write C/C++ code to extract exponent,
 	uint32_t* ptr = (uint32_t*)&decimal;
 
 	// function prototypes
-	void extractSignBit(uint32_t*);
-	void extractExponentBits(uint32_t*);
-	void extractMantissa(uint32_t*);
+	int extractSignBit(uint32_t*);
+	int extractExponentBits(uint32_t*);
+	int extractMantissa(uint32_t*);
 
 using namespace std;
 
@@ -42,11 +41,12 @@ using namespace std;
 		* right starting at the signbit. then print that sign    *
 		*bit to the console.                                     * 
 		*********************************************************/
-		void extractSignBit(uint32_t* p){
+		int extractSignBit(uint32_t* p){
 
 			uint32_t signBit = *p;
 			signBit >>= 31;
 			printf("sign bit: %x\n", signBit);
+			return signBit;
 		}
 
 		/*********************************************************
@@ -56,12 +56,13 @@ using namespace std;
 		* right starting at the signbit. then print that sign    *
 		*bit to the console.                                     * 
 		*********************************************************/
-		void extractExponentBits(uint32_t* p){
+		int extractExponentBits(uint32_t* p){
 		
 			uint32_t exponentBits = *p;
 			exponentBits <<= 1;
 			exponentBits >>= 24;		
 			printf("exponent bit: %x\n", exponentBits);
+			return exponentBits;
 		}	
 
 		/*********************************************************
@@ -71,10 +72,11 @@ using namespace std;
 		* right starting at the signbit. then print that sign    *
 		*bit to the console.                                     * 
 		*********************************************************/
-		void extractMantissa(uint32_t* p){
+		int extractMantissa(uint32_t* p){
 		
 			uint32_t mantissa = *p;
 			mantissa <<= 9;
 			mantissa >>= 9;
 			printf("mantissa bit: %x\n", mantissa);
+			return mantissa;
 		}
