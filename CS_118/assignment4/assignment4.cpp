@@ -9,7 +9,12 @@ Description: Write C/C++ code to extract exponent,
 
 #include <stdio.h>
 #include <stdint.h>
+#include <chrono> 
+#include <iostream> 
 
+using namespace std; 
+using namespace std::chrono;
+ 
 
 	// global variables
 	const float decimal = -7.75;				// 0111.0100 1101
@@ -20,13 +25,23 @@ Description: Write C/C++ code to extract exponent,
 	int extractExponentBits(uint32_t*);
 	int extractMantissa(uint32_t*);
 
-using namespace std;
-
 	// driver code
 	int main(){
 
+// Get starting timepoint 
+    auto start = high_resolution_clock::now(); 
+  
 		printf("float: %x\n", *ptr);
 		extractSignBit(ptr);
+		// Get ending timepoint 
+    auto stop = high_resolution_clock::now(); 
+        // Get duration. Substart timepoints to  
+    // get durarion. To cast it to proper unit 
+    // use duration cast method 
+    auto duration = duration_cast<microseconds>(stop - start); 
+
+        cout << "Time taken by function: " << duration.count() << " microseconds" << endl; 
+
 		extractExponentBits(ptr);
 		extractMantissa(ptr);
 		
@@ -46,7 +61,19 @@ using namespace std;
 			uint32_t signBit = *p;
 			signBit >>= 31;
 			printf("sign bit: %x\n", signBit);
+
+			char* p1 = new char[1024];
+			for (int i = 0; i < 1025; ++i)
+			{
+				p1[i]=255;
+			}
+			char* p2 = p1;
+			for (int i = 0; i < 1025; ++i)
+			{
+				p2[i]=255;
+			}
 			return signBit;
+
 		}
 
 		/*********************************************************
