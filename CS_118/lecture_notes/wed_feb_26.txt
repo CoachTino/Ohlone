@@ -1,0 +1,12 @@
+; declare external function
+	extern printf							; the c function
+
+	SECTION .data							; Data section
+
+	a:		db 5							; long int a = 5;
+	fmt:	db "a=%ld, rax=%ld", 10, 0 		; the printf func 
+
+
+	SECTION .text							; code section
+
+	global main								; the standard gcc entry point

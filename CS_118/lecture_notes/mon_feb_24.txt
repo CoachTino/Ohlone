@@ -1,0 +1,10 @@
+int add(int a, int b){
+	
+	return 
+}
+
+int main(){
+	
+	int fd = open("add.c", O_RDONLY);
+	write(1, "File handle:", 12);
+}

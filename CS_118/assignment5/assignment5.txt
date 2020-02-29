@@ -1,0 +1,99 @@
+// psuedocode
+
+include headers
+
+using namespace std;
+
+// declare global variables
+
+// don't need this down the road
+// but it's here because it's fun
+char pointer = "uwotm8";
+char pointer = "noob";
+
+// value to populate buffer
+// double check value of 0xDEADBEEF
+uint32_t = 0xDEADBEEF;
+
+// prototype functions
+
+// might use a function to create a buffer
+// allocate 100 MB buffer
+uint32_t pointer createBuffer(&b){ // might be setBuffer
+	uint32_t pointer = new uint32_t[1024]; // need uint32_t for this 
+									   	   // beccause of 0xDEADBEEF
+	b = pointer;
+}
+// figure out how to call and return the buffer
+void deleteBuffer(){
+	delete buffer;
+}
+// do I need a setter for the following?
+// will that be the create method?
+// get buffer and return
+uint32_t pointer getBuffer(){
+	
+	return buffer;
+}
+// populate each index of the buffer
+populateBuffer(uint32_t&, uint){
+	
+	loop to populate this
+}
+// use memcpy() to populate new buffers
+// in driver code iterate on this 10x
+// to satisfy the assignment
+void memcpyBuffer(buffer1,buffer2){
+	
+	memcpy;
+	// the code to track time that a function takes
+}
+
+
+int main(){
+	uint32_t* = buffer0,
+				buffer1,
+				buffer2,
+				buffer3,
+				buffer4;
+	buffer = createBuffer; // or setBuffer;
+	populateBuffer(buffer1);
+	for(code){
+		memcpyBuffer(buffer[i],buffer[i+1]);
+	}
+
+	return 0;
+}
+
+
+
+
+
+/*
+
+#include <chrono> 
+
+    auto start = high_resolution_clock::now(); 
+
+
+		// Get ending timepoint 
+    auto stop = high_resolution_clock::now(); 
+        // Get duration. Substart timepoints to  
+    // get durarion. To cast it to proper unit 
+    // use duration cast method 
+    auto duration = duration_cast<microseconds>(stop - start); 
+
+        cout << "Time taken by function: " << duration.count() << " microseconds" << endl; 
+
+
+			char* p1 = new char[1024];
+			for (int i = 0; i < 1025; ++i)
+			{
+				p1[i]=255;
+			}
+			char* p2 = p1;
+			for (int i = 0; i < 1025; ++i)
+			{
+				p2[i]=255;
+			}
+*/
