@@ -10,7 +10,7 @@ using namespace std::chrono;
 	// global variables
 
 	const uint32_t deadBeef = 0xDEADBEEF;
-	const uint32_t bufferCount = 1024;
+	const uint32_t bufferCount = 800000000;
 
 	// function prototypes
 	
