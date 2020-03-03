@@ -10,7 +10,7 @@ using namespace std::chrono;
 	// global variables
 
 	const uint32_t deadBeef = 0xDEADBEEF;
-	const uint32_t bufferCount = 100000000;
+	const uint32_t bufferCount = (1024*1024);
 
 	// function prototypes
 	
@@ -25,8 +25,7 @@ using namespace std::chrono;
 		uint32_t* buffer;
 		uint32_t* buffCopy;
 		buffer = createBuffer();
-		// debug below
-		// cout << "\n\n\nnew buffer here\n\n\n"; 
+		//cout << "\n\n\nnew buffer here\n\n\n"; 
 		buffCopy = createBuffer();
 		buffer = populateBuffer(buffer);		
 		int loopCount = 0;
@@ -42,42 +41,45 @@ using namespace std::chrono;
     		auto duration = duration_cast<microseconds>(stop - start); 
 			cout << "Time taken by function: " << duration.count() << " microseconds" << endl;  
 			loopCount++;
+
 		}while(loopCount < 10);
 
 		deleteBuffer(buffer);
 		deleteBuffer(buffCopy);
+
 		return 0;
 	}
 
 	uint32_t* createBuffer(){
 
 		uint32_t* b = new uint32_t[bufferCount];
-		// debug below
-		// for (int i = 0; i < bufferCount; ++i){
-			// cout << &b[i] << endl;
-		// }
+		/*
+		for (int i = 0; i < bufferCount/4; ++i){
+
+			cout << &b[i] << endl;
+		}
+		*/
 		return b;
 	}
 
 	uint32_t* populateBuffer(uint32_t* b){
 
-		for(int i = 0; i < bufferCount; i++){
+		for(int i = 0; i < bufferCount/4; i++){
 
 			b[i] = deadBeef;
-			// dubug below
 			//cout << "og buffer[" << i <<"] = " << b[i] << endl;
 		}
 		return b;
 	}
 
-	void copyBuffer(uint32_t* origin, uint32_t* copy){
+	void copyBuffer(uint32_t* copy, uint32_t* origin){
 
 		memcpy(&copy[0], &origin[0], bufferCount);
-
-			// debug below
-			// for(int i = 0; i < bufferCount; i++){
-				// cout << "copied buffer[" << i <<"] = " << copy[i] << endl;
-		// }
+/*
+			for(int i = 0; i < bufferCount/4; i++){
+				cout << "copied buffer[" << i <<"] = " << copy[i] << endl;
+		}
+		*/
 	}
 
 	void deleteBuffer(uint32_t *b){
