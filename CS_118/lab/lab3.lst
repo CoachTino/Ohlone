@@ -1,0 +1,14 @@
+     1                                 %line 1+1 lab3.asm
+     2                                 [extern printf]
+     3                                 [global myprint]
+     4                                 
+     5                                 [section .text]
+     6                                 
+     7                                 myprint:
+     8                                 
+     9 00000000 55                      push rbp
+    10 00000001 E8(F6FFFFFF)            call printf
+    11 00000006 5D                      pop rbp
+    12                                 
+    13 00000007 48C7C000000000          mov rax, 0
+    14 0000000E C3                      ret
