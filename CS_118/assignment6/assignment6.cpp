@@ -10,7 +10,7 @@ using namespace std::chrono;
 	// global variables
 
 	const uint32_t deadBeef = 0xDEADBEEF;
-	const uint32_t bufferCount = (1024);
+	const uint32_t bufferCount = (1024*1024*1024);
 
 	// function prototypes
 	
@@ -31,10 +31,10 @@ using namespace std::chrono;
 		buffer = createBuffer();
 		//cout << "\n\n\nnew buffer here\n\n\n"; 
 		buffCopy = createBuffer();
-		buffer = populateBuffer(buffer);		
+		buffer = populateBuffer(buffer);
+
 		int loopCount = 0;
 		do{
-			/*
     		// get starting timepoint
     		auto start = high_resolution_clock::now(); 
 			copyBuffer(buffCopy, buffer);
@@ -45,19 +45,24 @@ using namespace std::chrono;
     		// use duration cast method 
     		auto duration = duration_cast<microseconds>(stop - start); 
 			cout << "Time taken by function: " << duration.count() << " microseconds" << endl;  
-
-*/
-			 
-			myMemCpy(buffer, buffCopy, (bufferCount/4));
-			for (int i = 0; i < 256; ++i)
-			{
-				cout<<"mycpy " << buffCopy << buffCopy[i] << endl;
-			}
-						
-
 			loopCount++;
 
-		}while(loopCount < 1);
+		}while(loopCount < 10);
+
+		loopCount = 0;
+		do{
+    		// get starting timepoint
+    		auto start = high_resolution_clock::now(); 
+			myMemCpy(buffCopy, buffer, (bufferCount/4));
+			// get ending timepoint 
+    		auto stop = high_resolution_clock::now();
+    		// Get duration. Substart timepoints to  
+    		// get durarion. To cast it to proper unit 
+    		// use duration cast method 
+    		auto duration = duration_cast<microseconds>(stop - start); 
+			cout << "Time taken by function: " << duration.count() << " microseconds" << endl;  
+			loopCount++;
+		}while(loopCount < 10);
 
 		deleteBuffer(buffer);
 		deleteBuffer(buffCopy);
@@ -67,7 +72,7 @@ using namespace std::chrono;
 
 	uint32_t* createBuffer(){
 
-		uint32_t* b = new uint32_t[bufferCount];
+		uint32_t* b = malloc(1024*1024);
 		return b;
 	}
 
@@ -93,6 +98,6 @@ using namespace std::chrono;
 
 	void deleteBuffer(uint32_t *b){
 
-		delete[] b;
+		free(b);
 	}
 	

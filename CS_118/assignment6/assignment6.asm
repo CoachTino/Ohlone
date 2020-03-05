@@ -6,11 +6,11 @@ SECTION .text
 
 myMemCpy:
 
-	mov rcx, [rdx]
+	;mov rcx, [rdx]
 	mov rax, [rsi]
 	mov [rdi], rax
 	
-	sub rcx, 8
-	cmp rcx, 0
+	sub rdx, 1
+	cmp rdx, 0
 	jne myMemCpy
 ;	ret

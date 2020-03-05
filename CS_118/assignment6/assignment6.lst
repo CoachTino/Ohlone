@@ -7,11 +7,11 @@
      7                                 
      8                                 myMemCpy:
      9                                 
-    10 00000000 488B0A                  mov rcx, [rdx]
-    11 00000003 488B06                  mov rax, [rsi]
-    12 00000006 488907                  mov [rdi], rax
+    10                                 
+    11 00000000 488B06                  mov rax, [rsi]
+    12 00000003 488907                  mov [rdi], rax
     13                                 
-    14 00000009 4883E908                sub rcx, 8
-    15 0000000D 4883F900                cmp rcx, 0
-    16 00000011 75EB                    jne myMemCpy
+    14 00000006 4883EA01                sub rdx, 1
+    15 0000000A 4883FA00                cmp rdx, 0
+    16 0000000E 75EE                    jne myMemCpy
     17                                 
