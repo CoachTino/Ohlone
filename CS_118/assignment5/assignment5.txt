@@ -68,7 +68,6 @@ int main(){
 
 
 
-
 /*
 
 #include <chrono> 
@@ -97,3 +96,51 @@ int main(){
 				p2[i]=255;
 			}
 */
+
+
+
+
+
+public static void main(){
+	
+	for(loop value){
+
+	addInteger(5,5);
+	}
+
+	system.outprintln(returnSum(10,10);)
+	sysofunc3
+	sysofunc4
+
+}
+
+
+
+
+
+
+static void addInteger(int, int){
+	
+		// function def
+
+} 
+
+
+int returnSum(int, int){
+	
+	// func definition
+}
+
+
+
+func3
+
+
+
+func4
+
+
+
+
+func5
+

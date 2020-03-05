@@ -1,0 +1,17 @@
+     1                                 %line 1+1 assignment6.asm
+     2                                 [global myMemCpy]
+     3                                 
+     4                                 
+     5                                 [section .text]
+     6                                 
+     7                                 
+     8                                 myMemCpy:
+     9                                 
+    10 00000000 488B0A                  mov rcx, [rdx]
+    11 00000003 488B06                  mov rax, [rsi]
+    12 00000006 488907                  mov [rdi], rax
+    13                                 
+    14 00000009 4883E908                sub rcx, 8
+    15 0000000D 4883F900                cmp rcx, 0
+    16 00000011 75EB                    jne myMemCpy
+    17                                 

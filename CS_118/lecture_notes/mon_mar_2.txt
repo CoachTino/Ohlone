@@ -1,0 +1,67 @@
+lecture notes 3/2 monday
+
+
+call printf in assembly by using this technique
+
+main
+{
+	
+	myprintf(%d,%s, 12, hello)
+
+			  ^
+			  rdi 	rsi 	 rdx
+	}
+
+	write a c program that calls your function myprint()
+
+	;yasm -f elf64 -m amd64 -g dwarf2 test.asm -otest.o
+	; yasm -g dwarf2 -m amd64 -f elf64 lab2.asm -olab2.o -l lab2.lst
+
+.o is the compilation of c/c++ code
+extern means a symbol is not defined here (in the file)
+global is the entry point for c/c++ compilers
+
+link the .o file at compilation when being called by c/c++
+gcc caller.c test.o -ocaller -lc
+lc = link c // link c library
+function decoration
+look up and define pragma
+shared object .so or dll dynamic linked library
+
+gcc -c for compiling library
+static and dynamic library
+in static when you link the lib it becomes part of the exe - it merges into 1 file - it becomes completely a part of the exe - becomems 1 file
+when you link as a dynamic lib it stays seperate file but when you load the exe it loads the dll automatically
+gcc -shared bin/shared/add.o bin/shared/shared/.so
+
+gcc - shared bin/libmy.o libmy.so
+
+when compiling lib use -fPIC
+gcc -shared libmy.o -libmy.so
+gcc test.c -otest libmy.so
+export LD_LIBRARY_PATH=. // . means current directory
+./test
+ldd test shows which libraries are linked
+
+only include header files
+figure out where libraries are
+
+1) only include header files - text files (only function declerations)
+include is a preprocessor
+ifdef/endef = pragma once is better
+printf is libc
+nm output file - looks at export table and there is import table too
+nm libmyc.so
+ldd ./test
+PIC position independent code
+gcc -c -fPIC libmy.c
+gcc -shared libmy.o -olibmy.so
+gcc test.c -otest libmy.so
+dlopen function - look at this to learn more about libraries
+there is a dynamic loading and unloading opendl - windows=loadlibrary
+study up on function pointers
+man7.org/linux/man-pages/man3/dlopen.3.html
+in c++ you have stl = standard template
+
+(100*1024*1024)/4
+2)

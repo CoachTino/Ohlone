@@ -1,0 +1,22 @@
+;lab4
+
+;implement in assembly
+;function foo(int, int, int, int){
+	
+;	add three of the numbers;
+;	multiply sum of first 3 args;}
+
+
+
+;first register rdi when passing args to function
+
+;rdi arg1, rsi arg2, rdx arg3, rcx arg4, r8, r9
+
+; instruction in assembly to loop
+
+
+in loop when calling memcpy
+mov rdx, rcx
+mov rax, 1
+
+dec by 8

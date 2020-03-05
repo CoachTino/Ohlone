@@ -1,0 +1,15 @@
+     1                                 %line 1+1 lab4.asm
+     2                                 [global foo]
+     3                                 
+     4                                 
+     5                                 [section .text]
+     6                                 
+     7                                 foo:
+     8 00000000 55                      push rbp
+     9 00000001 4889E5                  mov rbp, rsp
+    10 00000004 4801F7                  add rdi, rsi
+    11 00000007 4801D7                  add rdi, rdx
+    12 0000000A 480FAFF9                imul rdi, rcx
+    13 0000000E 4889F8                  mov rax, rdi
+    14 00000011 5D                      pop rbp
+    15 00000012 C3                      ret
