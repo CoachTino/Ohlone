@@ -1,7 +1,8 @@
 // #libraries
-
+#include <stdio.h>
+#include <iostream>
 using namespace std;
-
+/*
 int foobar(int a, int b, int c)
 {
     int xx = a + 2;
@@ -11,8 +12,14 @@ int foobar(int a, int b, int c)
 
     return xx * yy * zz + sum;
 }
+*/
 
-int main()
-{
-    return foobar(77, 88, 99);
+int main(){
+
+	uint32_t* a = new uint32_t[3];
+	cout << &a[0] << endl;
+	cout << &a[1] << endl;
+	cout << &a[2] << endl;
+
+    return 0;
 }

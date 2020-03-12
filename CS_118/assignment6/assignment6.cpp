@@ -57,7 +57,7 @@ using namespace std::chrono;
 				/*for(int i = 0; i < bufferCount/4; i++){
 					
 					cout << "copied buffer[" << i << "] = " << buffCopy[i] << endl;
-				}*/
+					}*/
 			// get ending timepoint 
     		auto stop = high_resolution_clock::now();
     		// Get duration. Substart timepoints to  

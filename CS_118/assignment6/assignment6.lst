@@ -8,6 +8,10 @@
      8 00000000 488B06                  mov rax, [rsi]
      9 00000003 488907                  mov [rdi], rax
     10                                 
-    11 00000006 4883EA01                sub rdx, 1
-    12 0000000A 4883FA00                cmp rdx, 0
-    13 0000000E 75EE                    jne myMemCpy
+    11 00000006 4883C604                add rsi, 4
+    12 0000000A 4883C704                add rdi, 4
+    13                                 
+    14 0000000E 4883EA01                sub rdx, 1
+    15 00000012 4883FA00                cmp rdx, 0
+    16 00000016 75E6                    jne myMemCpy
+    17 00000018 C3                      ret
