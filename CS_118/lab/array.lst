@@ -1,0 +1,29 @@
+     1                                 %line 1+1 array.asm
+     2                                 [global add_array_asm]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 add_array_asm:
+     8 00000000 55                     push rbp
+     9 00000001 4889E5                 mov rbp, rsp
+    10                                 
+    11 00000004 4883FF00               cmp rdi, 0
+    12 00000008 741E                   je rexit
+    13 0000000A 4883FE00               cmp rsi, 0
+    14 0000000E 7418                   je rexit
+    15 00000010 4883F900               cmp rcx, 0
+    16 00000014 7412                   je rexit
+    17                                 
+    18                                 myloop:
+    19 00000016 488B07                  mov rax, [rdi]
+    20 00000019 488906                  mov [rsi], rax
+    21                                 
+    22 0000001C 4883C704                add rdi, 4
+    23 00000020 4883E901                sub rcx, 1
+    24 00000024 4883F900                cmp rcx, 0
+    25 00000028 7DEA                    jge myloop
+    26                                 
+    27                                 rexit:
+    28 0000002A 5D                     pop rbp
+    29 0000002B C3                     ret

@@ -1,0 +1,33 @@
+     1                                 %line 1+1 rev_array.asm
+     2                                 [global rev_array]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 rev_array:
+     8 00000000 55                      push rbp
+     9 00000001 4889E5                  mov rbp, rsp
+    10                                 
+    11 00000004 4883C610                add rsi, 16
+    12                                 
+    13 00000008 4883FF00                cmp rdi, 0
+    14 0000000C 7420                    je rexit
+    15 0000000E 4883FE00                cmp rsi, 0
+    16 00000012 741A                    je rexit
+    17 00000014 4883F900                cmp rcx, 0
+    18 00000018 7414                    je rexit
+    19                                 
+    20                                 daloop:
+    21 0000001A 8B07                    mov eax, dword [rdi]
+    22 0000001C 8906                    mov dword [rsi], eax
+    23                                 
+    24 0000001E 4883C704                add rdi, 4
+    25 00000022 4883EE04                sub rsi, 4
+    26                                 
+    27 00000026 4883EA01                sub rdx, 1
+    28 0000002A 4883FA00                cmp rdx, 0
+    29 0000002E 75E8                    jne daloop
+    30                                 
+    31                                 rexit
+    32 00000030 5D                      pop rbp
+    33 00000031 C3                      ret
