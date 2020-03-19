@@ -7,13 +7,15 @@ rev_array:
 	push rbp
 	mov rbp, rsp	
 
-	add rsi, 16
+	sub rdx, 1
+	imul rdx, 4
+	add rsi, rdx
 
 	cmp rdi, 0
 	je rexit
 	cmp rsi, 0
 	je rexit
-	cmp rcx, 0
+	cmp rdx	, 0
 	je rexit
 
 daloop:
