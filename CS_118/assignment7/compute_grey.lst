@@ -1,0 +1,48 @@
+     1                                 %line 1+1 compute_grey.asm
+     2                                 [global compute_grey]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 compute_grey:
+     8                                 
+     9 00000000 55                      push rbp
+    10 00000001 4889E5                  mov rbp, rsp
+    11                                 
+    12 00000004 4883FF00                cmp rdi, 0
+    13 00000008 743D                    je rexit
+    14                                 
+    15 0000000A 4831C0                  xor rax, rax
+    16 0000000D 4831DB                  xor rbx, rbx
+    17 00000010 4831C9                  xor rcx, rcx
+    18                                 
+    19 00000013 BE000000FF              mov esi, -16777216
+    20                                 
+    21 00000018 B9000000FF              mov ecx, -16777216
+    22 0000001D C1E908                  shr ecx, 8
+    23                                 
+    24 00000020 BB000000FF              mov ebx, -16777216
+    25 00000025 C1EB10                  shr ebx, 16
+    26                                 
+    27 00000028 2337                    and esi, dword [rdi]
+    28 0000002A C1EE18                  shr esi, 24
+    29 0000002D 01F0                    add eax, esi
+    30                                 
+    31 0000002F 230F                    and ecx, dword [rdi]
+    32 00000031 C1E910                  shr ecx, 16
+    33 00000034 01C8                    add eax, ecx
+    34                                 
+    35 00000036 231F                    and ebx, dword [rdi]
+    36 00000038 C1EB08                  shr ebx, 8
+    37 0000003B 01D8                    add eax, ebx
+    38                                 
+    39 0000003D 99                      cdq
+    40 0000003E 66BA0000                mov dx, 0
+    41 00000042 66BB0300                mov bx, 3
+    42 00000046 66F7FB                  idiv bx
+    43                                 
+    44                                 
+    45                                 
+    46                                 rexit:
+    47 00000049 5D                      pop rbp
+    48 0000004A C3                      ret
