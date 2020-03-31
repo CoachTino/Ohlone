@@ -1,14 +1,15 @@
-global add_array_asm
+global square_array
 
 section .text
 
 ;prologue
-add_array_asm:
+square_array:
 
 	push rbp				;setup stack frame
 	mov rbp, rsp
 
 	xor rax, rax			;initialize rax to zero
+	xor rbx, rbx			;initialize rbx to zero
 
 	cmp rdi, 0				;if arg is null exit
 	je rexit
@@ -17,14 +18,17 @@ add_array_asm:
 	je rexit
 
 myloop:
-	add eax, dword [rdi]	;add index to eax
+	mov ebx, dword [rdi]	;move index to ebx
+   imul ebx, ebx			;square ebx
+
+    add eax, ebx			;add squared index to eax
 
 	add rdi, 4				;move one index in array
 
 	sub rsi, 1				;subtract 1 from counter
 	cmp rsi, 0				;compare counter to 0
 
-	jge myloop				;loop condition
+	jne myloop				;loop condition
 
 ;epilogue
 rexit: 

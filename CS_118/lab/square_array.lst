@@ -1,0 +1,39 @@
+     1                                 %line 1+1 square_array.asm
+     2                                 [global square_array]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 square_array:
+     8                                 
+     9 00000000 55                      push rbp
+    10 00000001 4889E5                  mov rbp, rsp
+    11                                 
+    12 00000004 4831C0                  xor rax, rax
+    13 00000007 4831DB                  xor rbx, rbx
+    14                                 
+    15 0000000A 4883FF00                cmp rdi, 0
+    16 0000000E 7419                    je rexit
+    17                                 
+    18 00000010 4883FE00                cmp rsi, 0
+    19 00000014 7413                    je rexit
+    20                                 
+    21                                 
+    22                                 
+    23                                 myloop:
+    24 00000016 8B1F                    mov ebx, dword [rdi]
+    25 00000018 0FAFDB                  imul ebx, ebx
+    26                                 
+    27 0000001B 01D8                    add eax, ebx
+    28                                 
+    29 0000001D 4883C704                add rdi, 4
+    30                                 
+    31 00000021 4883EE01                sub rsi, 1
+    32 00000025 4883FE00                cmp rsi, 0
+    33                                 
+    34 00000029 75E9                    jne myloop
+    35                                 
+    36                                 
+    37                                 rexit:
+    38 0000002B 5D                      pop rbp
+    39 0000002C C3                      ret
