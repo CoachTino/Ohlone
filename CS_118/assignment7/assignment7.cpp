@@ -5,10 +5,10 @@
 using namespace cv;
 using namespace std;
 
-uint8_t compute_grey(uint32_t* p){
-(uint8_t) (((*p & 0xff000000) >> 24) + ((*p & 0x00ff0000) >> 16) + ((*p & 0x0000ff00) >> 8))/3 ;
-	
-}
+extern "C" uint32_t compute_grey(uint32_t* p);/*{
+(uint8_t)(((*p & 0xff000000) >> 24) + ((*p & 0x00ff0000) >> 16) + ((*p & 0x0000ff00) >> 8))/3 ;
+	return *p;
+}*/
 
 //convert this function into assembly
 void gray_scale(Mat* color, Mat* gray) {
