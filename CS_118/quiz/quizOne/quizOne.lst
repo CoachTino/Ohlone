@@ -1,0 +1,59 @@
+     1                                 %line 1+1 quizOne.asm
+     2                                 [global evens_and_odds]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 
+     8                                 evens_and_odds:
+     9                                 
+    10 00000000 55                      push rbp
+    11 00000001 4889E5                  mov rbp, rsp
+    12                                 
+    13 00000004 4883FF00                cmp rdi, 0
+    14 00000008 7450                    je rexit
+    15 0000000A 4883FE00                cmp rsi, 0
+    16 0000000E 744A                    je rexit
+    17 00000010 4883FA00                cmp rdx, 0
+    18 00000014 7444                    je rexit
+    19 00000016 4883F900                cmp rcx, 0
+    20 0000001A 743E                    je rexit
+    21                                 
+    22 0000001C 4989D3                  mov r11, rdx
+    23                                 
+    24                                 startLoop:
+    25                                 
+    26 0000001F 8B07                    mov eax, dword [rdi]
+    27 00000021 448B27                  mov r12d, dword [rdi]
+    28 00000024 99                      cdq
+    29 00000025 66BB0200                mov bx, 2
+    30 00000029 66F7FB                  idiv bx
+    31                                 
+    32 0000002C 83E001                  and eax, 1
+    33 0000002F 85C0                    test eax, eax
+    34 00000031 4883FA00                cmp rdx, 0
+    35 00000035 7506                    jne isOdd
+    36                                 
+    37 00000037 448B17                  mov r10d, dword [rdi]
+    38 0000003A 448916                  mov dword [rsi], r10d
+    39 0000003D EB03                    jmp indexCounter
+    40                                 
+    41                                 isOdd:
+    42 0000003F 458923                  mov dword [r11], r12d
+    43 00000042 EBFE                    jmp indexCounter
+    44                                 
+    45                                 indexCounter:
+    46 00000044 4883C704                add rdi, 4
+    47 00000048 4883C604                add rsi, 4
+    48 0000004C 4983C304                add r11, 4
+    49                                 
+    50 00000050 4883E901                sub rcx, 1
+    51 00000054 4883F900                cmp rcx, 0
+    52 00000058 75C3                    jne startLoop
+    53 0000005A EBFE                    jmp rexit
+    54                                 
+    55                                 
+    56                                 rexit:
+    57 0000005C 5D                      pop rbp
+    58 0000005D C3                      ret
+    59                                 

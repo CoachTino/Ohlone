@@ -1,0 +1,37 @@
+
+standard deviation formula
+
+// square each element in the array and return the sum of the array
+	--------------
+	| 0001 | 0010 |
+	--------------
+    | 1111 | 1111 |
+
+   & -------------
+	| 0001 | 0010 | 
+
+
+	OX12 14 17 00
+	0XFF 00 00 00
+>> 24
+B1
+	OX12 14 17 00
+	0X00 FF 00 00
+>> 16
+B2
+	OX12 14 17 00
+	0X00 00 FF 00
+>> 8
+B3
+
+ADD SUM, B1,B2,B3
+DIV SUM, 3
+
+RET WORD[SUM]
+
+
+
+
+
+
+
