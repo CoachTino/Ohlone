@@ -1,0 +1,138 @@
+     1                                 %line 1+1 lab6.asm
+     2                                 [global standardDeviation]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 standardDeviation:
+     8                                 
+     9                                 
+    10                                 
+    11 00000000 55                      push rbp
+    12 00000001 4889E5                  mov rbp, rsp
+    13                                 
+    14                                 
+    15 00000004 4883FF00                cmp rdi, 0
+    16 00000008 0F84BC000000            je rexit
+    17 0000000E 4883FE00                cmp rsi, 0
+    18 00000012 0F84B2000000            je rexit
+    19 00000018 4883FA00                cmp rdx, 0
+    20 0000001C 0F84A8000000            je rexit
+    21                                 
+    22                                 
+    23 00000022 4831C0                  xor rax, rax
+    24                                 
+    25 00000025 4989D2                  mov r10, rdx
+    26                                 
+    27 00000028 4989D3                  mov r11, rdx
+    28                                 
+    29 0000002B 4989D4                  mov r12, rdx
+    30                                 
+    31 0000002E 4989D5                  mov r13, rdx
+    32                                 
+    33 00000031 4989D6                  mov r14, rdx
+    34                                 
+    35 00000034 4989D7                  mov r15, rdx
+    36                                 
+    37                                 sumLoop:
+    38                                 
+    39 00000037 0307                    add eax, dword [rdi]
+    40 00000039 4883C704                add rdi, 4
+    41                                 
+    42 0000003D 4883EA01                sub rdx, 1
+    43 00000041 4883FA00                cmp rdx, 0
+    44 00000045 75EE                    jne sumLoop
+    45                                 
+    46                                 divide:
+    47                                 
+    48 00000047 99                      cdq
+    49 00000048 49F7FA                  idiv r10
+    50                                 
+    51 0000004B EBFE                    jmp fillTempLoop
+    52                                 
+    53                                 fillTempLoop:
+    54                                 
+    55 0000004D 8906                    mov dword [rsi], eax
+    56                                 
+    57 0000004F 4883C604                add rsi, 4
+    58 00000053 4983EE01                sub r14, 1
+    59 00000057 4983FE00                cmp r14, 0
+    60 0000005B 75EE                    jne fillTempLoop
+    61                                 
+    62 0000005D EBFE                    jmp resetLoopCounter
+    63                                 
+    64                                 resetLoopCounter:
+    65                                 
+    66 0000005F 4D6BC004                imul r8, 4
+    67 00000063 4C29C7                  sub rdi, r8
+    68 00000066 4C29C6                  sub rsi, r8
+    69                                 
+    70 00000069 EBFE                    jmp subtractStuff
+    71                                 
+    72                                 subtractStuff
+    73                                 
+    74 0000006B 8B07                    mov eax, dword [rdi]
+    75                                 
+    76 0000006D 2B06                    sub eax, dword [rsi]
+    77                                 
+    78 0000006F 8906                    mov dword [rsi], eax
+    79                                 
+    80 00000071 4883C704                add rdi, 4
+    81 00000075 4883C604                add rsi, 4
+    82 00000079 4983EA01                sub r10, 1
+    83 0000007D 4983FA00                cmp r10, 0
+    84 00000081 75E6                    jne subtractStuff
+    85                                 
+    86 00000083 EBFE                    jmp resetAgain
+    87                                 
+    88                                 resetAgain:
+    89                                 
+    90 00000085 4D6BFF04                imul r15, 4
+    91 00000089 4C29FF                  sub rdi, r15
+    92 0000008C 4C29FE                  sub rsi, r15
+    93                                 
+    94 0000008F EBFE                    jmp squareIndexes
+    95                                 
+    96                                 squareIndexes:
+    97                                 
+    98 00000091 8B06                    mov eax, dword [rsi]
+    99 00000093 48F7E8                  imul rax
+   100 00000096 8906                    mov dword [rsi], eax
+   101                                 
+   102 00000098 4883C604                add rsi, 4
+   103 0000009C 4983EB01                sub r11, 1
+   104 000000A0 4983FB00                cmp r11, 0
+   105 000000A4 75E9                    jne squareIndexes
+   106                                 
+   107 000000A6 EBFE                    jmp resetAnotherTime
+   108                                 
+   109                                 resetAnotherTime:
+   110                                 
+   111 000000A8 4883EE28                sub rsi, 40
+   112 000000AC 48C7C000000000          mov rax, 0
+   113                                 
+   114                                 newSum:
+   115                                 
+   116 000000B3 0306                    add eax, dword [rsi]
+   117 000000B5 4883C604                add rsi, 4
+   118                                 
+   119 000000B9 4983EC01                sub r12, 1
+   120 000000BD 4983FC00                cmp r12, 0
+   121 000000C1 75EE                    jne newSum
+   122                                 
+   123 000000C3 EBFE                    jmp divideAgain
+   124                                 
+   125                                 divideAgain:
+   126                                 
+   127 000000C5 BB00000000              mov ebx, 0
+   128 000000CA 99                      cdq
+   129 000000CB 49F7FD                  idiv r13
+   130                                 
+   131 000000CE EBFE                    jmp rexit
+   132                                 
+   133                                 
+   134                                 
+   135                                 rexit:
+   136 000000D0 5D                      pop rbp
+   137 000000D1 C3                      ret
+   138                                 
