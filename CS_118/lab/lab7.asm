@@ -12,11 +12,11 @@ absoluteValue:
 	cmp		rdi,		0						;if arg1 is 0 return 0
 	je 		rexit
 
-	xor		rcx,		rcx
-	add		rcx,		rdi
+;	xor		rcx,		rcx
+;	add		rcx,		rdi
 
-	and		rcx,		0x80000000
-	test	rcx,		rcx
+	and		rdi,		0x80000000
+	test	rdi,		rdi
 
 	jne		doSomething
 

@@ -1,0 +1,40 @@
+     1                                 %line 1+1 lab8.asm
+     2                                 [global sumFloat]
+     3                                 
+     4                                 [section .text]
+     5                                 
+     6                                 
+     7                                 
+     8                                 sumFloat:
+     9                                 
+    10 00000000 55                      push rbp
+    11 00000001 4889E5                  mov rbp, rsp
+    12                                 
+    13 00000004 4883FF00                cmp rdi, 0
+    14 00000008 741A                    je rexit
+    15                                 
+    16 0000000A 4883FE00                cmp rsi, 0
+    17 0000000E 7414                    je rexit
+    18                                 
+    19                                 addLoop:
+    20                                 
+    21 00000010 F30F100F                movss xmm1, dword [rdi]
+    22                                 
+    23 00000014 F30F58C1                addss xmm0, xmm1
+    24                                 
+    25                                 
+    26 00000018 4883C704                add rdi, 4
+    27 0000001C 4883EE01                sub rsi, 1
+    28 00000020 4883FE01                cmp rsi, 1
+    29                                 
+    30 00000024 75E8                    jne addLoop
+    31                                 
+    32                                 
+    33                                 
+    34                                 
+    35                                 rexit:
+    36 00000026 5D                      pop rbp
+    37 00000027 C3                      ret
+    38                                 
+    39                                 
+    40                                 
