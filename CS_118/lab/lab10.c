@@ -5,7 +5,6 @@
 
 int main(int argc, char** argv) {
 
-		//float d = 0;
 		float r[8] = {0};
 		float xx[8] = {1.2, 1.3, 1.4, 1.5, 2.1, 6.1, 7.2, 3.5};
 		float yy[8] = {1.2, 1.3, 1.4, 1.5, 2.1, 6.1, 7.2, 3.5};
