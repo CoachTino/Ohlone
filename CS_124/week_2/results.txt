@@ -1,0 +1,49 @@
+results assuming the following givens:
+initial velocity of 30 
+angle of 60
+
+
+elapsed seconds: 0
+X coordinate: 0
+Y coordinate: 0
+
+elapsed seconds: .5
+X coordinate: 7.50001
+Y coordinate: 11.7641
+
+elapsed seconds: 1
+X coordinate: 15
+Y coordinate: 21.0757
+
+elapsed seconds: 1.5
+X coordinate: 22.5
+Y coordinate: 27.9349
+
+elapsed seconds: 2
+X coordinate: 30
+Y coordinate: 32.3415
+
+elapsed seconds: 2.5
+X coordinate: 37.5001
+Y coordinate: 34.2956
+
+elapsed seconds: 3
+X coordinate: 45.0001
+Y coordinate: 33.7972
+
+elapsed seconds: 3.5
+X coordinate: 52.5001
+Y coordinate: 30.8464
+
+elapsed seconds: 4
+X coordinate: 67.5001
+Y coordinate: 17.5871
+
+elapsed seconds: 4.5
+X coordinate: 75.0001
+Y coordinate: 7.27874
+
+elapsed seconds: 5
+X coordinate: 82.5001
+the ball hit the ground
+

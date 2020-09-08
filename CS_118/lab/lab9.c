@@ -11,11 +11,11 @@ float xx[8] = {1.2, 1.3, 1.4, 1.5, 2.1, 6.1, 7.2, 3.5};
 float yy[8] = {1.2, 1.3, 1.4, 1.5, 2.1, 6.1, 7.2, 3.5};
 
 	for(int i = 0; i < 2; i++ ){
-		__m256 x = _mm_load_ps(&xx[i*4]);
-		__m256 y = _mm_load_ps(&yy[i*4]);
+		__m128 x = _mm_load_ps(&xx[i*4]);
+		__m128 y = _mm_load_ps(&yy[i*4]);
 
 
-		__m256 z = _mm_mul_ps(x, y);
+		__m128 z = _mm_mul_ps (x, y);
 		_mm_storeu_ps (r, z);	 
 
 
