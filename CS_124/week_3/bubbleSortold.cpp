@@ -1,21 +1,42 @@
-/*
-  authors:  Sal, Kulsoom, Tino
-  program name: Bubble Sort
-  description: takes an unsorted array of integers and prints
-               them to the console in ascending order
-  date authored: 9/10/2020
-*/
-
-#include "bubbleSort.h"
 #include <iostream>
+
+// function prototype
+void tinosCoolBubbleSort(int x[]);
+
+
+int main(){
+
+  // create an array with 5 indexes with values 51 26 93 0 and 1337
+  int unsortedArray[5] = {51, 26, 93, 0, 1337};
+
+  // line spacing for output
+  std::cout << std::endl;
+
+  // formatting output to console
+  std::cout << "Original unsorted array: ";
+
+  // loop to print out array to console
+  for(int i = 0; i < 5; i++){
+
+    std::cout << unsortedArray[i] << " ";
+  }
+
+  // line spacing for output
+  std::cout << std::endl;
+
+  // function call to sort array
+  tinosCoolBubbleSort(unsortedArray);
+
+  return 0;
+}
 
 /**************************************
 * takes an unsorted array of integers *
-* and puts them in ascending order    *
-* from smallest to largest            *
+* and sorts them in ascending order   *
+* from least to greatest              *
 * @parm array of integers             *  
 **************************************/
-void bubbleSort::sortAndPrint(int x[]){
+void tinosCoolBubbleSort(int x[]){
 
   // temporary variable for swapping index values
   int temp;
@@ -26,7 +47,6 @@ void bubbleSort::sortAndPrint(int x[]){
     // loop to compare/swap index's 0-4
     for(int i = 0; i < 4; i++){
 
-      // test expression on i and i+1
       if(x[i] > x[i+1]){
 
         // places index i+1 in temporary variable
@@ -40,7 +60,7 @@ void bubbleSort::sortAndPrint(int x[]){
       }
     }
   }
-  
+
   // line spacing for output
   std::cout << std::endl;
 
@@ -56,4 +76,5 @@ void bubbleSort::sortAndPrint(int x[]){
   // line spacing for output
   std::cout << std::endl;
   std::cout << std::endl;
+
 }
