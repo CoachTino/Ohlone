@@ -18,16 +18,54 @@ int main(){
   std::cout << std::endl;
 
   // formatting output to console
-  std::cout << "Original unsorted array: ";
+  std::cout << "user input array: " << std::endl;
 
-  // loop to print out sorted array to console
-  for(int i = 0; i < 5; i++){
+  // formatting output to console
+  std::cout << "Array value BEFORE sorting: ";
 
-    std::cout << bo.unsortedArray[i] << " ";
-  }
+  // print array before it is sorted
+  bo.printArray(bo.userInputArray);
 
   // function call to sort array
-  bo.sortAndPrint(bo.unsortedArray);
+  bo.sortArray(bo.userInputArray);
+
+  // formatting output to console
+  std::cout << "Array value AFTER sorting: ";
+
+  // print array after it is sorted
+  bo.printArray(bo.userInputArray);
+
+  // line spacing for output
+  std::cout << std::endl;
+
+
+
+
+
+
+
+  // formatting output to console
+  std::cout << "hard coded test array: " << std::endl;
+
+  // formatting output to console
+  std::cout << "Array value BEFORE sorting: ";
+
+  // print hardcoded array before it is sorted
+  bo.printArray(bo.unsortedArray);
+
+  // function call to sort array
+  bo.sortArray(bo.unsortedArray);
+
+  // formatting output to console
+  std::cout << "Array value AFTER sorting: ";
+
+  // print hardcoded array after it is sorted
+  bo.printArray(bo.unsortedArray);
+
+  // line spacing for output
+  std::cout << std::endl;
+  
+
 
   return 0;
 }

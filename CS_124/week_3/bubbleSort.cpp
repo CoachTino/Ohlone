@@ -9,13 +9,31 @@
 #include "bubbleSort.h"
 #include <iostream>
 
+/*****************************************************
+* constructor that takes user input of 5 numbers and *
+* stores the values inside of an array of integers   *
+* no @parms                                          *
+*****************************************************/
+bubbleSort::bubbleSort(){
+
+  //print to console
+  std::cout << "Enter 5 positive numbers to be sorted: " << std::endl;  
+
+  // for loop to save user in each index of array
+  for(int i = 0; i < 5; i++){
+
+    // store user input
+    std::cin >> userInputArray[i];
+  }
+}
+
 /**************************************
 * takes an unsorted array of integers *
-* and puts them in ascending order    *
-* from smallest to largest            *
+* and puts them in ascending          *
+* order from smallest to largest      *
 * @parm array of integers             *  
 **************************************/
-void bubbleSort::sortAndPrint(int x[]){
+void bubbleSort::sortArray(int x[]){
 
   // temporary variable for swapping index values
   int temp;
@@ -40,20 +58,22 @@ void bubbleSort::sortAndPrint(int x[]){
       }
     }
   }
-  
-  // line spacing for output
-  std::cout << std::endl;
+}
 
-  // formatting output to console
-  std::cout << "New sorted array: ";
+/***********************************
+* prints the contents of an array  *
+* to the console                   *
+* @parm array of integers          *
+***********************************/
+void bubbleSort::printArray(int z[]){
 
   // loop to print out array to console
   for(int j = 0; j < 5; j++){
 
-    std::cout << x[j] << " ";
+    // print out index value
+    std::cout << z[j] << " ";
   }
 
   // line spacing for output
-  std::cout << std::endl;
   std::cout << std::endl;
 }
