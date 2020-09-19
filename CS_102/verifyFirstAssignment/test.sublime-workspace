@@ -1,0 +1,1023 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fli",
+				"flipBits"
+			],
+			[
+				"uns",
+				"unsortedArray"
+			],
+			[
+				"max",
+				"max_x"
+			],
+			[
+				"right",
+				"right_wall"
+			],
+			[
+				"squa",
+				"square_array"
+			],
+			[
+				"expon",
+				"exponentBits"
+			],
+			[
+				"cstring",
+				"cstringPointerToHex"
+			],
+			[
+				"cstrin",
+				"cstringPointerToHex"
+			],
+			[
+				"prin",
+				"printCStringInHexAndDecimal"
+			],
+			[
+				"print",
+				"printCStringInHexAndDecimal"
+			],
+			[
+				"temp",
+				"tempInt"
+			],
+			[
+				"cst",
+				"cstringToHex"
+			],
+			[
+				"one",
+				"onesComplement"
+			],
+			[
+				"abs",
+				"absolute"
+			],
+			[
+				"user",
+				"userNum"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.h",
+			"settings":
+			{
+				"buffer_size": 391,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.cpp",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.h",
+			"settings":
+			{
+				"buffer_size": 283,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.cpp",
+			"settings":
+			{
+				"buffer_size": 606,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab4/arrayFileFunctions/FileFunction.h",
+			"settings":
+			{
+				"buffer_size": 820,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab4/arrayFileFunctions/FileFunction.cpp",
+			"settings":
+			{
+				"buffer_size": 2639,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab4/inventoryProgram/InventoryItem.h",
+			"settings":
+			{
+				"buffer_size": 495,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab4/inventoryProgram/InventoryProgram.cpp",
+			"settings":
+			{
+				"buffer_size": 4047,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/sentenceCapitalizer/SentenceCapitalizer.h",
+			"settings":
+			{
+				"buffer_size": 320,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/sentenceCapitalizer/SentenceCapitalizer.cpp",
+			"settings":
+			{
+				"buffer_size": 1284,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/median/Median.h",
+			"settings":
+			{
+				"buffer_size": 307,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/median/Median.cpp",
+			"settings":
+			{
+				"buffer_size": 1744,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/testScores/TestScores.h",
+			"settings":
+			{
+				"buffer_size": 597,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab2/testScores/TestScores.cpp",
+			"settings":
+			{
+				"buffer_size": 2350,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/lab4/testScoresClass/TestScores.cpp",
+			"settings":
+			{
+				"buffer_size": 628,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccount.h",
+			"settings":
+			{
+				"buffer_size": 528,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccountProgram.cpp",
+			"settings":
+			{
+				"buffer_size": 5354,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccountProgram.h",
+			"settings":
+			{
+				"buffer_size": 438,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 414.0,
+		"history":
+		[
+			"pwd",
+			"git status",
+			"pwd",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Ohlone",
+		"/C/Ohlone/CS_113",
+		"/C/Ohlone/CS_113/quiz",
+		"/C/Ohlone/CS_124",
+		"/C/Ohlone/CS_124/group_projects"
+	],
+	"file_history":
+	[
+		"/C/Ohlone/COMSC_165/finalProject/CustomerAccountProgram.cpp",
+		"/C/Ohlone/COMSC_165/lab5/linkedList/LinkedList.h",
+		"/C/Ohlone/COMSC_165/lab5/linkedList/LinkedList.cpp",
+		"/C/Ohlone/COMSC_165/lab4/testScoresClass/TestScores.h",
+		"/C/Ohlone/COMSC_165/lab4/minMaxTemplates/main.cpp",
+		"/C/Ohlone/COMSC_165/lab3/soccerScores/SoccerScores.cpp",
+		"/C/Ohlone/COMSC_165/lab3/courseGrade/CourseGrade.cpp",
+		"/C/Ohlone/COMSC_165/lab3/corporateSales/CorporateSales.h",
+		"/C/Ohlone/COMSC_165/lab3/corporateSales/CorporateSales.cpp",
+		"/C/Ohlone/COMSC_165/lab3/carClass/Car.cpp",
+		"/C/Ohlone/CS_102/week6/top_div.cpp",
+		"/C/Ohlone/CS_102/week11/retrieve_oop.cpp",
+		"/C/Ohlone/CS_113/quiz/quiz.cpp",
+		"/C/Ohlone/CS_102/week8/top_div_structures.cpp",
+		"/C/Ohlone/CS_113/quiz/main.cpp",
+		"/C/Ohlone/CS_102/Final/survey.cpp",
+		"/C/Ohlone/CS_102/week11/form_oop_2.html",
+		"/C/Ohlone/CS_102/week11/form_oop.html",
+		"/C/Ohlone/CS_113/assignment1/main.cpp",
+		"/C/Ohlone/CS_113/assignment1/mylib.cpp",
+		"/C/Ohlone/CS_113/assignment1/mylib.h",
+		"/C/Ohlone/CS_124/week_3/bubbleSort.cpp",
+		"/C/Ohlone/CS_124/week_3/bubbleSort.h",
+		"/C/Ohlone/CS_113/assignment1/Boolean.cpp",
+		"/C/Ohlone/CS_125/lab5/index.html",
+		"/C/Ohlone/CS_125/lab3/RainFall.java",
+		"/C/Ohlone/CS_125/lab5/MilesPerGallonUserInterface.java",
+		"/C/Ohlone/CS_125/lab5/MPGCalculatorApplet$1.class",
+		"/C/Ohlone/CS_125/lab5/MPGCalculatorApplet.class",
+		"/C/Ohlone/CS_113/assignment1/Boolean - Copy.cpp",
+		"/C/Ohlone/CS_113/classwork1.cpp",
+		"/C/Ohlone/CS_124/week_1/ball.cpp",
+		"/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.h",
+		"/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.cpp",
+		"/C/Ohlone/COMSC_165/lab3/corporateSales/main.cpp",
+		"/C/Ohlone/CS_124/week_1/bug.cpp",
+		"/C/Ohlone/CS_124/week1_day1_practice/ball.cpp",
+		"/C/Ohlone/COMSC_165/lab5/linkedList/main.cpp",
+		"/C/Ohlone/COMSC_165/lab5/linkedList/ListNode.h",
+		"/C/Ohlone/COMSC_165/lab2/backwardString/main.cpp",
+		"/C/Users/Tino/Documents/CS_124_old/Lab_1/dayType.h",
+		"/C/Ohlone/CS_124/week1_day1_practice/tester.cpp",
+		"/C/Users/Tino/Documents/CS_124_old/Lab_1/dayType.cpp",
+		"/C/Users/Tino/Documents/CS_124_old/Lab_2/arrayListType.h",
+		"/C/Ohlone/CS_118/assignment2/assignment2.cpp",
+		"/C/Users/Tino/Documents/CS_124_old/Lab_2/Ch3_MainProgram.cpp",
+		"/C/Users/Tino/Documents/CS_124_old/Lab_2/main.cpp",
+		"/C/Ohlone/CS_118/lab/cw8_modified.c",
+		"/C/Ohlone/CS_118/lab/lab8.c",
+		"/C/Ohlone/CS_118/lab/lab9.c",
+		"/C/Ohlone/CS_118/final/final.c",
+		"/C/Users/Tino/eclipse/java-2020-03/eclipse/eclipse.ini",
+		"/C/Users/Tino/eclipse/jee-2020-03/eclipse/eclipse.ini",
+		"/C/Ohlone/CS_118/final/test.c",
+		"/C/Ohlone/CS_118/final/two.asm",
+		"/C/Ohlone/CS_118/assignment7/assignment7.cpp",
+		"/C/Ohlone/CS_118/assignment7/compute_grey.asm",
+		"/C/Program Files (x86)/Java/jdk-13.0.2/bin/api-ms-win-core-rtlsupport-l1-1-0.dll",
+		"/C/Users/Tino/Desktop/test/kewlStuff.c",
+		"/C/Users/Tino/Desktop/test/kewlStuff.cpp",
+		"/C/Program Files (x86)/Call of Duty Modern Warfare/api-ms-win-crt-locale-l1-1-0.dll",
+		"/C/Ohlone/CS_118/assignment6/assignment6.cpp",
+		"/C/Ohlone/CS_118/example_thread.c",
+		"/C/Ohlone/CS_118/lab/lab8.asm",
+		"/C/Ohlone/CS_118/lab/lab7.c",
+		"/C/Ohlone/CS_118/lab/lab6.c",
+		"/C/Ohlone/CS_118/quiz/quizOne/quizOne.asm",
+		"/C/Ohlone/CS_118/quiz/quizOne/quizOne.c",
+		"/C/Workspace/jawaPractice/.git/config",
+		"/C/Users/Tino/Downloads/Compiler Explorer C++ Editor #1 Code (1).cpp",
+		"/C/Users/Tino/Downloads/Compiler Explorer C++ Editor #1 Code.cpp",
+		"/C/Ohlone/CS_118/lab/array.c",
+		"/C/Ohlone/CS_118/assignment6/assignment6.asm",
+		"/C/Ohlone/CS_118/lab/square_array.asm",
+		"/C/Ohlone/CS_118/lab/array.asm",
+		"/C/Ohlone/CS_118/lecture_notes/mon_mar_30.txt",
+		"/C/Ohlone/CS_118/lab/rev_array.asm",
+		"/C/Users/Tino/Desktop/.bash_aliases",
+		"/C/Ohlone/CS_118/assignment6/global add_array_asm.asm",
+		"/C/Users/Tino/AppData/Local/Google/Chrome/User Data/Default/IndexedDB/https_www.alexbergs.com_0.indexeddb.leveldb/LOG",
+		"/C/Ohlone/CS_118/assignment5/testTime.cpp",
+		"/C/Ohlone/CS_118/assignment5/assignment5.o",
+		"/C/Ohlone/CS_118/assignment4/assignment4.cpp",
+		"/C/Ohlone/CS_118/assignment3/assignment3.cpp",
+		"/C/Ohlone/CS_118/assignment1/assignment1.cpp",
+		"/C/Ohlone/test.cpp",
+		"/C/Ohlone/COMSC_165/lab3/courseGrade/main.cpp",
+		"/C/Ohlone/string_to_hex.cpp",
+		"/C/Ohlone/CS_118/assignment3/bits.h",
+		"/C/Users/Tino/Desktop/test.cpp",
+		"/C/Ohlone/README.md",
+		"/C/Ohlone/id_rsa.pub",
+		"/C/Ohlone/CS_118/lecture_notes/mon_feb_3.txt",
+		"/C/Ohlone/git",
+		"/C/Ohlone/CS_118/assignment2/assignment1.cpp",
+		"/C/Ohlone/CS_124/CS_124/Lab_1/dayType.cpp",
+		"/C/Ohlone/CS_124/CS_124/Lab_1/dayType.h",
+		"/C/Users/Tino/AppData/Local/Google/Chrome/User Data/Default/Web Data",
+		"/C/Users/Tino/Desktop/switchcasestuff.cpp",
+		"/C/Ohlone/CS_124/Lab_1/dayType.cpp",
+		"/C/Ohlone/CS_124/Lab_1/dayType.h",
+		"/C/Ohlone/COMSC_165/lab2/elementShifter/main.cpp",
+		"/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.h",
+		"/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.cpp",
+		"/C/Ohlone/COMSC_165/lab2/median/Median.cpp",
+		"/C/Ohlone/COMSC_165/lab2/median/Median.h",
+		"/C/Ohlone/COMSC_165/lab1/gradeBookV2/Student.cpp",
+		"/C/Ohlone/COMSC_165/lab1/chargeAccountValidation/Account.cpp",
+		"/C/Ohlone/COMSC_165/lab1/chargeAccountValidation/Account.h",
+		"/C/Ohlone/COMSC_165/lab4/testScoresClass/TestScores.cpp",
+		"/C/Ohlone/COMSC_165/lab4/testScoresClass/main.cpp"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 16,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Ohlone/COMSC_165/lab2/elementShifter/ElementShifter.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								934,
+								934
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 16,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 283,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								283,
+								283
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Ohlone/COMSC_165/lab2/backwardString/BackwardString.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 606,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Ohlone/COMSC_165/lab4/arrayFileFunctions/FileFunction.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 820,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								398,
+								398
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Ohlone/COMSC_165/lab4/arrayFileFunctions/FileFunction.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1175,
+								1175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Ohlone/COMSC_165/lab4/inventoryProgram/InventoryItem.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 495,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Ohlone/COMSC_165/lab4/inventoryProgram/InventoryProgram.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3525,
+								3525
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1674.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/C/Ohlone/COMSC_165/lab2/sentenceCapitalizer/SentenceCapitalizer.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 320,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/Ohlone/COMSC_165/lab2/sentenceCapitalizer/SentenceCapitalizer.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/C/Ohlone/COMSC_165/lab2/median/Median.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "/C/Ohlone/COMSC_165/lab2/median/Median.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1744,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "/C/Ohlone/COMSC_165/lab2/testScores/TestScores.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 597,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "/C/Ohlone/COMSC_165/lab2/testScores/TestScores.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2350,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 214.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "/C/Ohlone/COMSC_165/lab4/testScoresClass/TestScores.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								504,
+								504
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccount.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 528,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccountProgram.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								999,
+								999
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "/C/Ohlone/COMSC_165/finalProject/CustomerAccountProgram.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								438,
+								438
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 40.8
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "test.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 190.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

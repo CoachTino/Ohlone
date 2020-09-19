@@ -42,7 +42,7 @@ using namespace std;
     	fileObject.open("test.txt", ios::in | ios::binary);
 
     	// read the contents of the file to the array
-    	cout << "readying file to array/memory.\n";
+    	cout << "reading file to array/memory.\n";
     	fileObject.read(arr, arrSize);
 
     	// close the file
