@@ -14,7 +14,7 @@
 		std::cout << "\nLet's get some file i/o practice.\n";
 
 		const int SIZE = 4;
-		int stuff[SIZE] = {255};
+		int stuff[SIZE] = {4292600};
 		int* pointer = stuff;
 
 		std::fstream fo;

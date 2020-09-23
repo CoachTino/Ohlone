@@ -41,16 +41,16 @@ void bubbleSort::sortArray(int x[]){
   // loop to iterate until the whole array is sorted
   for(int h = 0; h < 5; h++){
 
-    // loop to compare/swap index's 0-4
+    // loop to compare/swap index's values 0-4
     for(int i = 0; i < 4; i++){
 
       // test expression on i and i+1
       if(x[i] > x[i+1]){
 
-        // places index i+1 in temporary variable
+        // places index i+1 value in temporary variable
         temp = x[i+1];
 
-        // places value of index i+1 into index i
+        // places value of index i+1 value into index i
         x[i+1] = x[i];
 
         // places value of temp inside index i
