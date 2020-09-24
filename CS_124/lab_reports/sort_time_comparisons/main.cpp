@@ -26,8 +26,9 @@ int main(){
 	cout << "\nLet's get some file i/o practice.\n";
 
 
-	//fo.writeToFile(fos, so.testArray);
-	fo.readFromFile(fos,fo.getTestData(), so.testArrayNew);
+	fo.readFromFile(fos,fo.getMlkSpeech(), so.testArrayNew);
+
+	//fo.printTokenizedDataSet();
 
 
 	return 0;

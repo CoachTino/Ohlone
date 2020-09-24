@@ -18,6 +18,8 @@ class fileIO{
 		const string huckleBerryFinn= "huckleberry_finn.txt";
 		const string leviathan= "leviathan.txt";
 		const string mlkDream= "mlk_dream.txt";
+
+		//vector<string> tokenizedDataSet;
 	
 	public:
 
@@ -26,11 +28,14 @@ class fileIO{
 		const string getHomer();
 		const string getHuckleBerryFinn();
 		const string getLeviathan();
-		const string getMlkDream();
+		const string getMlkSpeech();
+		//vector<string> getVector();
+		vector<string> tokenizedDataSet;
+		string tempData[1590];
 
-		void writeToFile(fstream &, string s[]);
 		void readFromFile(fstream &, const string str, string s[]);
-		void tokenizeDataSet(vector<string> vect);
+		void tokenizeDataSet(string& str, vector<string>& vect, char delim);
+		void printTokenizedDataSet();
 };
 
 #endif

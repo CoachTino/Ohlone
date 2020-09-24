@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>Ohlone</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>javaPractice/csc340</name>
+			<type>2</type>
+			<location>C:/Ohlone/javaPractice</location>
+		</link>
+		<link>
+			<name>javaPractice/csc340/csc340</name>
+			<type>2</type>
+			<location>C:/Ohlone/javaPractice</location>
+		</link>
+	</linkedResources>
+</projectDescription>

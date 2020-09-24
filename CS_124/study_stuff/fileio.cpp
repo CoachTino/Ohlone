@@ -1,32 +1,12 @@
 // practice assignment to get a refresher on reading and writing to files
 
+#include "fileIO.h"
 #include <iostream>
 #include <fstream>
 #include <string>
 
 
-
-	void writeToFile(std::fstream &, int* , const int&);
-	void readFromFile(std::fstream &, int*, const int&);
-
-	int main(){
-
-		std::cout << "\nLet's get some file i/o practice.\n";
-
-		const int SIZE = 4;
-		int stuff[SIZE] = {4292600};
-		int* pointer = stuff;
-
-		std::fstream fo;
-
-		writeToFile(fo, stuff, SIZE);
-		readFromFile(fo, stuff, SIZE);
-
-
-		return 0;
-	}
-
-	void writeToFile(std::fstream &file, int* arrPointer, const int& x){
+	void fileIO::writeToFile(std::fstream &file, int* arrPointer, const int& x){
 
 		file.open("data.txt", std::ios::in | std::ios::out);
 		if(file){
@@ -43,20 +23,26 @@
 		}
 	}
 
-	void readFromFile(std::fstream &file, int* arrPointer, const int& x){
+	void fileIO::readFromFile(std::fstream &file, int* arrPointer, const int& x){
 
 		file.open("data.txt", std::ios::in | std::ios::out);
 		if(file){
 
 			// create a buffer
 			int* buffer = new int[x];
-
+/*
 			for (int i = 0; i < x; ++i){
 
 				file >> buffer[i];
 				//std::cout << *buffer << " ";
 			}
+*/
 
+			file.seekg(0, file.end);
+			int fileLength = file.tellg();
+			file.seekg(0, file.beg);
+
+			
 			std::cout << std::endl;
 
 			delete[] buffer;
