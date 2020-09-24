@@ -46,43 +46,69 @@ using std::getline;
 	//	return tokenizedDataSet;
 	//}
 
-	void fileIO::printTokenizedDataSet(){
-		for (int i = 0; i < tokenizedDataSet.size(); ++i){
-			cout <<tokenizedDataSet.at(i) << endl;
-		}
-	}
 
-	void fileIO::readFromFile(fstream &fileObject, string fileName, string array[]){
+	void fileIO::setBufferSize(fstream &fileObject, string fileName){
 
-		fileObject.open(fileName, ios::in | ios::out);
+		fileObject.open(fileName, ios::in);
 		if(fileObject){
 
-			vector<string> vbuffer;
 			string sbuffer;
 			int i = 0;
+
 			while (!fileObject.eof()){
 
 				fileObject >> sbuffer;
-				fileObject >> tempData[i];
-				// tokenizeDataSet(sbuffer, vbuffer, '!');
-				// tokenizeDataSet(sbuffer, vbuffer, ',');
-				// tokenizeDataSet(sbuffer, vbuffer, '"');
-				vbuffer.push_back(sbuffer);
 				i++;
-				//vbuffer.swap(tokenizedDataSet);
-			//	vbuffer.clear();
-				//cout << vbuffer.at(i) << endl;	//debug printout
 			}
-			//cout << vbuffer.size() << endl;		//debug printout
+			bufferSize = i;
 
-//debug printout 
-/*
-			for (int h = 0; h < vbuffer.size(); ++h){
+			fileObject.close();
+		}else if(!fileObject){
 
-				//cout << vbuffer[h] << endl;
-				cout << tempData[h] << endl;
+		    cout << "Error reading file!" << endl;
+		    exit(EXIT_FAILURE);
+		}
+	}
+	
+	int fileIO::getBufferSize(){
+
+		return bufferSize;
+	}
+
+	void fileIO::writeToFile(fstream &file, string array[], string fileName){
+
+		file.open(fileName, ios::out);
+		if(file){
+
+			for (int i = 0; i < 5; ++i){
+
+				file << array[i] << "\n";
 			}
-*/
+			file.close();
+		}else if (!file){
+
+		    cout << "Error writing file!" << endl;
+		    exit(EXIT_FAILURE);
+		}
+	}
+
+	void fileIO::readFromFile(fstream &fileObject, string fileName){
+
+		fileObject.open(fileName, ios::in);
+		if(fileObject){
+
+			vector<string> vbuffer;
+			string word;
+			string* buffer = new string[getBufferSize()];
+
+			int i = 0;
+			while (!fileObject.eof()){
+
+				fileObject >> buffer[i];
+				//cout << buffer[i] << endl;	//debug printout
+				i++;
+			}
+
 			fileObject.close();
 
 		}else if(!fileObject){
@@ -92,28 +118,33 @@ using std::getline;
 		}
 	}
 
-	void fileIO::tokenizeDataSet(string& str, vector<string>& vect, char delim){
-	//do
-		int tokenStart = 0; // starting pos of the next token
-
+	void fileIO::tokenizeDataSet(string& str){
+	
 		// find the first occurrence of the delimeiter
 		int delimPosition = 0;
-		delimPosition = str.find(delim);
+		do{
+			delimPosition = 0;
+			int tokenStart = 0; // starting pos of the next token
 
-		// while we havent run out of delimiters...
-		//while(delimPosition != string::npos){
-		if(delimPosition > 0){
+			delimPosition = str.find(',');
 
-			// extract the token
-			string tok = str.substr(tokenStart, delimPosition - tokenStart);
+			// while we havent run out of delimiters...
+			//while(delimPosition != string::npos){
+			if(delimPosition > 0){
 
-			// push the token onto the tokens vector
-			vect.push_back(tok);
-			// move delimPosition to the next character position
-			delimPosition++;
+				// extract the token
+				string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
-			// move tokenStart to delimPosition
-			tokenStart = delimPosition;
+				// push the token onto the tokens vector
+				//vect.push_back(tok);
+
+
+
+				// move delimPosition to the next character position
+				delimPosition++;
+
+				// move tokenStart to delimPosition
+				tokenStart = delimPosition;
 
 			}else if(delimPosition == 0){
 
@@ -123,7 +154,7 @@ using std::getline;
 				string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
 				// push the token onto the tokens vector			
-				vect.push_back(tok);
+				//vect.push_back(tok);
 
 				// move delimPosition to the next character position
 				delimPosition++;
@@ -137,9 +168,14 @@ using std::getline;
 				string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
 				// push the token onto the vector			
-			vect.push_back(tok);
+				//vect.push_back(tok);
 			}
-		//while();	
-		//}
+		}while(delimPosition > 0);	
 	}
 
+	void fileIO::printTokenizedDataSet(){
+	
+		//for (int i = 0; i < tokenizedDataSet.size(); ++i){
+		//	cout <<tokenizedDataSet.at(i) << endl;
+		//}
+	}

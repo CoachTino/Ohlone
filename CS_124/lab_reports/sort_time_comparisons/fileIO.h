@@ -19,7 +19,8 @@ class fileIO{
 		const string leviathan= "leviathan.txt";
 		const string mlkDream= "mlk_dream.txt";
 
-		//vector<string> tokenizedDataSet;
+		int bufferSize;
+		vector<string> tokenizedDataSet;
 	
 	public:
 
@@ -30,11 +31,12 @@ class fileIO{
 		const string getLeviathan();
 		const string getMlkSpeech();
 		//vector<string> getVector();
-		vector<string> tokenizedDataSet;
-		string tempData[1590];
 
-		void readFromFile(fstream &, const string str, string s[]);
-		void tokenizeDataSet(string& str, vector<string>& vect, char delim);
+		void setBufferSize(fstream &, const string);
+		int getBufferSize();
+		void writeToFile(fstream &, string [], string);
+		void readFromFile(fstream &, const string);
+		void tokenizeDataSet(string& );
 		void printTokenizedDataSet();
 };
 
