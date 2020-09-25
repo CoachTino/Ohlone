@@ -12,24 +12,11 @@ int main(){
 	sortingLib so;
 	fstream fos;
 
-	so.insertionSort(so.testArray);
-        
-    cout << "\nDebug: in main after sort: \n";
-	for(int i  = 0; i < 5; i++){
+	fo.setBufferSize(fos, fo.getMlkSpeech());
+	fo.readFromFile(fos, fo.getMlkSpeech(), fo.asfd);
+	//so.selectionSort(fo.tempData);
 
-		cout << so.testArrayNew[i] << " ";
-	}
-	cout << endl;	
-
-
-
-	cout << "\nLet's get some file i/o practice.\n";
-
-
-	fo.setBufferSize(fos,fo.getMlkSpeech());
-	fo.readFromFile(fos,fo.getMlkSpeech());
-
-	//fo.printTokenizedDataSet();
+	fo.printTokenizedDataSet(fo.asfd);
 
 
 	return 0;

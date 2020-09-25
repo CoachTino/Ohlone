@@ -1,7 +1,7 @@
 #include "sortingLib.h"
 #include <iostream>
 
-    void sortingLib::bubbleSort(std::string unsortedArray[]){
+    void sortingLib::bubbleSort(std::string &unsortedArray[]){
 
       // temporary variable for swapping index values
       std::string temp;
@@ -21,7 +21,7 @@
       }
     }
 
-    void sortingLib::selectionSort(std::string unsortedArray[]){
+    void sortingLib::selectionSort(std::string &unsortedArray[]){
 
       int minIndex;
 
@@ -40,7 +40,7 @@
       }
     }
 
-    void sortingLib::insertionSort(std::string unsortedArray[]){
+    void sortingLib::insertionSort(std::string &unsortedArray[]){
 
       std::string temp;
 
@@ -58,12 +58,12 @@
       }
     }
 
-    void sortingLib::mergeSort(std::string s[]){
+    void sortingLib::mergeSort(std::string& s[]){
 
 
     }
 
-    void sortingLib::quickSort(std::string s[]){
+    void sortingLib::quickSort(std::string& s[]){
 
 
     }

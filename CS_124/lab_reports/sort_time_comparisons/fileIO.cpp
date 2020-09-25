@@ -41,10 +41,80 @@ using std::getline;
 		return mlkDream;
 	}
 
-	//vector<string> fileIO::getVector(){
+	const char fileIO::getHyphen(){
 
-	//	return tokenizedDataSet;
-	//}
+		return hyphen;
+	}
+
+	const char fileIO::getQuotationMark(){
+
+		return quotationMark;
+	}
+
+	const char fileIO::getExclamationPoint(){
+
+		return exclamationPoint;
+	}
+
+	const char fileIO::getSpace(){
+
+		return space;
+	}
+
+	const char fileIO::getColon(){
+
+		return colon;
+	}
+
+	const char fileIO::getPeriod(){
+
+		return period;
+	}
+
+	const char fileIO::getComma(){
+
+		return comma;
+	}
+
+	const char fileIO::getQuestionMark(){
+
+		return questionMark;
+	}
+
+	const char fileIO::getApostrophe(){
+
+		return apostrophe;
+	}
+
+	const char fileIO::getMorseCode(){
+
+		return morseCode;
+	}
+
+	const char fileIO::getClosingBracket(){
+
+		return closingBracket;
+	}
+	
+	const char fileIO::getOpeningBracket(){
+
+		return openingBracket;
+	}
+
+	const char fileIO::getClosingParenthesis(){
+
+		return closingParenthesis;
+	}
+	
+	const char fileIO::getOpeningParenthesis(){
+
+		return openingParenthesis;
+	}
+
+	vector<string> fileIO::getVector(){
+
+		return tokenizedDataSet;
+	}
 
 
 	void fileIO::setBufferSize(fstream &fileObject, string fileName){
@@ -55,13 +125,12 @@ using std::getline;
 			string sbuffer;
 			int i = 0;
 
-			while (!fileObject.eof()){
+			while (fileObject >> sbuffer){
 
-				fileObject >> sbuffer;
 				i++;
 			}
 			bufferSize = i;
-
+			cout << i << endl;
 			fileObject.close();
 		}else if(!fileObject){
 
@@ -92,23 +161,36 @@ using std::getline;
 		}
 	}
 
-	void fileIO::readFromFile(fstream &fileObject, string fileName){
+	void fileIO::readFromFile(fstream &fileObject, string fileName, vector<string> &vect){
 
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
 
-			vector<string> vbuffer;
+
 			string word;
-			string* buffer = new string[getBufferSize()];
+			string* sbuffer = new string[getBufferSize()];
 
 			int i = 0;
-			while (!fileObject.eof()){
+			while (fileObject >> word){
 
-				fileObject >> buffer[i];
-				//cout << buffer[i] << endl;	//debug printout
+				sbuffer[i] = word;
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getHyphen(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getComma(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getQuotationMark(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getApostrophe(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getExclamationPoint(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getColon(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getPeriod(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getMorseCode(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getOpeningBracket(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getClosingBracket(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getClosingParenthesis(), i);
+				sbuffer[i] = tokenizeDataSet(sbuffer[i], getOpeningParenthesis(), i);
+				tempData[i] = sbuffer[i];
+				//vect.push_back(sbuffer[i]);
+				//cout << sbuffer[i] << endl;	//debug printout
 				i++;
 			}
-
 			fileObject.close();
 
 		}else if(!fileObject){
@@ -118,64 +200,54 @@ using std::getline;
 		}
 	}
 
-	void fileIO::tokenizeDataSet(string& str){
+	string fileIO::tokenizeDataSet(string& str,char delim, int h){
 	
-		// find the first occurrence of the delimeiter
-		int delimPosition = 0;
-		do{
-			delimPosition = 0;
-			int tokenStart = 0; // starting pos of the next token
+		int tokenStart = 0; 
 
-			delimPosition = str.find(',');
+		string temp;
+		int delimPosition = str.find(delim);
 
-			// while we havent run out of delimiters...
-			//while(delimPosition != string::npos){
-			if(delimPosition > 0){
+		if(delimPosition > 0){
 
-				// extract the token
-				string tok = str.substr(tokenStart, delimPosition - tokenStart);
+			// extract the token
+			string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
-				// push the token onto the tokens vector
-				//vect.push_back(tok);
+			temp = tok;
 
+			// move delimPosition to the next character position
+			delimPosition++;
 
+			// move tokenStart to delimPosition
+			tokenStart = delimPosition;
 
-				// move delimPosition to the next character position
-				delimPosition++;
+		}else if(delimPosition == 0){
 
-				// move tokenStart to delimPosition
-				tokenStart = delimPosition;
+			tokenStart++;
 
-			}else if(delimPosition == 0){
+			// extract the token
+			string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
-				tokenStart++;
+			temp = tok;
 
-				// extract the token
-				string tok = str.substr(tokenStart, delimPosition - tokenStart);
+			// move delimPosition to the next character position
+			delimPosition++;
 
-				// push the token onto the tokens vector			
-				//vect.push_back(tok);
+			// move tokenStart to delimPosition
+			tokenStart = delimPosition;
 
-				// move delimPosition to the next character position
-				delimPosition++;
+		}else if(delimPosition == string::npos){
 
-				// move tokenStart to delimPosition
-				tokenStart = delimPosition;
+			//extract the token
+			string tok = str.substr(tokenStart, delimPosition - tokenStart);
 
-			}else if(delimPosition == string::npos){
-
-				//extract the token
-				string tok = str.substr(tokenStart, delimPosition - tokenStart);
-
-				// push the token onto the vector			
-				//vect.push_back(tok);
-			}
-		}while(delimPosition > 0);	
+			temp = tok;
+		}
+		return temp;	
 	}
 
-	void fileIO::printTokenizedDataSet(){
+	void fileIO::printTokenizedDataSet(vector<string> &vect){
 	
-		//for (int i = 0; i < tokenizedDataSet.size(); ++i){
-		//	cout <<tokenizedDataSet.at(i) << endl;
-		//}
+			for (int i = 0; i < vect.size(); ++i){
+				cout << "index " << i << ": " << vect[i] << endl;
+			}
 	}

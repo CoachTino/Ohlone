@@ -12,19 +12,19 @@ class sortingLib{
 		std::string testArrayNew[5] =  {"basketball", "bypass", "bounce", "b", "blasphemy"};
 
 		// bubble sort
-		void bubbleSort(std::string s[]);
+		void bubbleSort(std::string (&s)[]);
 
 		// selection sort
-		void selectionSort(std::string s[]);
+		void selectionSort(std::string (&s)[]);
 		
 		// insertion sort
-		void insertionSort(std::string s[]);	
+		void insertionSort(std::string (&s)[]);	
 		
 		// merge sort
-		void mergeSort(std::string s[]);		
+		void mergeSort(std::string (&s)[]);		
 
 		// quick sort
-		void quickSort(std::string s[]);
+		void quickSort(std::string (&s)[]);
 
 };
 
