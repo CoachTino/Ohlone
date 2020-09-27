@@ -1,0 +1,1 @@
+This function simply copies a block of data, without checking its contents nor appending.
