@@ -8,19 +8,12 @@ using std::string;
 using std::fstream;
 using std::vector;
 
-	class fileIO{
+	class fileIO: public delimeters{
 
 		private:
 
 			int bufferSize;
 			vector<string> tokenizedDataSet;
-
-			// tokenizedDataSet.push_back("asdfasdf");
-			// tokenizedDataSet[0] = "asdfasdf"; 
-					// tokenizedDataSet.push_back("qwerqwer");
-			// tokenizedDataSet[1] = "qwerqwer"; 
-			// tokenizedDataSet.pop_back();
-				// tokenizedDataSet[0] = "asdfasdf"; 
 
 		public:
 

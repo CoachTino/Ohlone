@@ -1,6 +1,7 @@
-#include "fileIO.h"
-#include "delimeters.h"
 #include <iostream>
+
+#include "delimeters.h"
+#include "fileIO.h"
 #include <fstream>
 #include <vector>
 
@@ -53,10 +54,6 @@ using std::getline;
 
 				i++;
 			}
-			// for (int i = 0; i < ; ++i){
-
-			// 	file << array[i] << "\n";
-			// }
 			file.close();
 		}else if (!file){
 
@@ -73,7 +70,7 @@ using std::getline;
 			string word;
 
 			while (fileObject >> word){
-				/*
+				
 				word = tokenizeDataSet(word, getHyphen());
 				word = tokenizeDataSet(word, getComma());
 				word = tokenizeDataSet(word, getQuotationMark());
@@ -86,11 +83,11 @@ using std::getline;
 				word = tokenizeDataSet(word, getClosingBracket());
 				word = tokenizeDataSet(word, getClosingParenthesis());
 				word = tokenizeDataSet(word, getOpeningParenthesis());
-				word = tokenizeDataSet(word, getClosingQuotationMark());
-				word = tokenizeDataSet(word, getOpeningQuotationMark());
+				// word = tokenizeDataSet(word, getClosingQuotationMark());
+				// word = tokenizeDataSet(word, getOpeningQuotationMark());
 				word = tokenizeDataSet(word, getUnderscore());
 				word = tokenizeDataSet(word, getSemiColon());
-				*/
+				
 				//list[i] = word;
 
 				vect.push_back(word);

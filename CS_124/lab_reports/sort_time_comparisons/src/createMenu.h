@@ -5,7 +5,7 @@
 
 		private:
 
-			// stuff
+			int choice;
 
 		public:
 

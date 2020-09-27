@@ -33,7 +33,7 @@ int main(){
 
 	//	cout << so.testArray[i] << endl;
 	//}
-	fileInputOutputObject.printTokenizedDataSet(fileInputOutputObject.getVector());
+	//fileInputOutputObject.printTokenizedDataSet(fileInputOutputObject.getVector());
 
 	return 0;
 }
