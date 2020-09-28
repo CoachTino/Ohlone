@@ -5,35 +5,30 @@
 #include "textFileNames.h"
 #include "delimeters.h"
 #include "sortingLib.h"
-#include "fileIO.h"
+#include "fileManip.h"
 #include "createMenu.h"
 
 using std::cout;
-//using std::endl;
+using std::endl;
 using std::fstream;
 
 
 int main(){
 
-	fileIO fileInputOutputObject;
-	sortingLib sortingLibObject;
+	fileManip fmo;
 	fstream fstreamObject;
-	textFileNames textFileNamesObject;
-	delimeters delimeterObject;
-	createMenu menuObject;
+	createMenu mo;
 
+	fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
 
-
-
-	fileInputOutputObject.setBufferSize(fstreamObject, textFileNamesObject.getAlice());
-	fileInputOutputObject.readFromFile(fstreamObject, textFileNamesObject.getAlice(), fileInputOutputObject.getVector());
-
-	//so.insertionSort(fo.tempData, fo.getBufferSize());
+	// fmo.bubbleSort(fmo.getVector());
+	// fmo.selectionSort(fmo.getVector());
+	fmo.insertionSort(fmo.getVector());
 	//for(int i = 0; i < 5; i++){
 
 	//	cout << so.testArray[i] << endl;
 	//}
-	//fileInputOutputObject.printTokenizedDataSet(fileInputOutputObject.getVector());
+	// fmo.printTokenizedDataSet(fmo.getVector());
 
 	return 0;
 }

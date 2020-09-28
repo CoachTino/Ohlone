@@ -5,11 +5,21 @@
 
 		private:
 
-			int choice;
+			int choiceOne, choiceTwo, choiceThree;
+			std::string name;
+
 
 		public:
-
 			createMenu();
+
+			void greetTheUser();
+			void setUserName();
+			std::string getUsersName();
+
+			void createAlgorithmMenu();
+			void createTextFileMenu();
+			void takeUserInput(int &);
+
 	};
 
 #endif

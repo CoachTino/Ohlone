@@ -1,5 +1,8 @@
-#ifndef FILEIO_H
-#define FILEIO_H
+#ifndef FILEMANIP_H
+#define FILEMANIP_H
+
+#include "sortingLib.h"
+#include "textFileNames.h"
 
 #include <fstream>
 #include <vector>
@@ -8,7 +11,7 @@ using std::string;
 using std::fstream;
 using std::vector;
 
-	class fileIO: public delimeters{
+	class fileManip: public textFileNames, public sortingLib{
 
 		private:
 

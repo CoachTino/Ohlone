@@ -1,7 +1,8 @@
 #include <iostream>
 
 #include "delimeters.h"
-#include "fileIO.h"
+#include "sortingLib.h"
+#include "fileManip.h"
 #include <fstream>
 #include <vector>
 
@@ -13,12 +14,12 @@ using std::string;
 using std::ios;
 using std::getline;
 
-	vector<string>& fileIO::getVector(){
+	vector<string>& fileManip::getVector(){
 
 		return tokenizedDataSet;
 	}
 
-	void fileIO::setBufferSize(fstream &fileObject, string fileName){
+	void fileManip::setBufferSize(fstream &fileObject, string fileName){
 
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
@@ -31,7 +32,6 @@ using std::getline;
 				i++;
 			}
 			bufferSize = i;
-			cout << i << endl;
 			fileObject.close();
 		}else if(!fileObject){
 
@@ -40,12 +40,12 @@ using std::getline;
 		}
 	}
 	
-	int fileIO::getBufferSize(){
+	int fileManip::getBufferSize(){
 
 		return bufferSize;
 	}
 
-	void fileIO::writeToFile(fstream &file, string array[], string fileName){
+	void fileManip::writeToFile(fstream &file, string array[], string fileName){
 
 		file.open(fileName, ios::out);
 		if(file){
@@ -62,8 +62,9 @@ using std::getline;
 		}
 	}
 
-	void fileIO::readFromFile(fstream &fileObject, string fileName, vector<string>& vect){
+	void fileManip::readFromFile(fstream &fileObject, string fileName, vector<string>& vect){
 
+		delimeters doo;
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
 
@@ -71,28 +72,24 @@ using std::getline;
 
 			while (fileObject >> word){
 				
-				word = tokenizeDataSet(word, getHyphen());
-				word = tokenizeDataSet(word, getComma());
-				word = tokenizeDataSet(word, getQuotationMark());
-				word = tokenizeDataSet(word, getApostrophe());
-				word = tokenizeDataSet(word, getExclamationPoint());
-				word = tokenizeDataSet(word, getColon());
-				word = tokenizeDataSet(word, getPeriod());
-				word = tokenizeDataSet(word, getMorseCode());
-				word = tokenizeDataSet(word, getOpeningBracket());
-				word = tokenizeDataSet(word, getClosingBracket());
-				word = tokenizeDataSet(word, getClosingParenthesis());
-				word = tokenizeDataSet(word, getOpeningParenthesis());
+				word = tokenizeDataSet(word, doo.getHyphen());
+				word = tokenizeDataSet(word, doo.getComma());
+				word = tokenizeDataSet(word, doo.getQuotationMark());
+				word = tokenizeDataSet(word, doo.getApostrophe());
+				word = tokenizeDataSet(word, doo.getExclamationPoint());
+				word = tokenizeDataSet(word, doo.getColon());
+				word = tokenizeDataSet(word, doo.getPeriod());
+				word = tokenizeDataSet(word, doo.getMorseCode());
+				word = tokenizeDataSet(word, doo.getOpeningBracket());
+				word = tokenizeDataSet(word, doo.getClosingBracket());
+				word = tokenizeDataSet(word, doo.getClosingParenthesis());
+				word = tokenizeDataSet(word, doo.getOpeningParenthesis());
 				// word = tokenizeDataSet(word, getClosingQuotationMark());
 				// word = tokenizeDataSet(word, getOpeningQuotationMark());
-				word = tokenizeDataSet(word, getUnderscore());
-				word = tokenizeDataSet(word, getSemiColon());
-				
-				//list[i] = word;
+				word = tokenizeDataSet(word, doo.getUnderscore());
+				word = tokenizeDataSet(word, doo.getSemiColon());
 
 				vect.push_back(word);
-				//cout << word << endl;	//debug printout
-			 
 			 }
 
 			fileObject.close();
@@ -105,7 +102,7 @@ using std::getline;
 		cout << "done reading file" << endl;
 	}
 
-	string fileIO::tokenizeDataSet(string& str,char delim){
+	string fileManip::tokenizeDataSet(string& str,char delim){
 	
 		int tokenStart = 0; 
 
@@ -150,13 +147,9 @@ using std::getline;
 		return temp;	
 	}
 
-	void fileIO::printTokenizedDataSet(vector<string> vect){
-	
-			//for (int i = 0; i < getBufferSize(); ++i){
-			//	cout << "array index " << i << ": " << tempData[i] << endl;
-			//}
+	void fileManip::printTokenizedDataSet(vector<string> vect){
 
-			for (int i = 0; i < vect.size(); ++i){
+			for (int i = 0; i < 50; ++i){
 				cout << "vector index " << i << ": " << vect[i] << endl;
 			}			
 	}
