@@ -8,11 +8,6 @@ using std::string;
 		return alice;
 	}
 
-	const string textFileNames::getTestData(){
-
-		return testData;
-	}
-
 	const string textFileNames::getHomer(){
 
 		return homer;

@@ -1,11 +1,16 @@
 #ifndef CREATEMENU_H
 #define CREATEMENU_H
 
+#include "fileManip.h"
+#include <vector>
+#include <fstream>
+
 	class createMenu{
 
 		private:
 
-			int choiceOne, choiceTwo, choiceThree;
+			int textOptionOne, textOptionTwo, textOptionThree;
+			int algorithmOptionOne, algorithmOptionTwo; 
 			std::string name;
 
 
@@ -16,9 +21,11 @@
 			void setUserName();
 			std::string getUsersName();
 
-			void createAlgorithmMenu();
+			void createAlgorithmMenu(fileManip &, std::vector<std::string> &, bool &secondPass);
 			void createTextFileMenu();
 			void takeUserInput(int &);
+			void processAlgorithmInput(fileManip &, std::vector<std::string> &, int &);
+			void processTextFileInput(fileManip &, fstream &, int &);
 
 	};
 

@@ -9,7 +9,6 @@ using std::string;
 		private:
 
 			const string alice = "alice.txt";
-			const string testData = "data.txt";
 			const string homer = "homer.txt";
 			const string huckleBerryFinn= "huckleberry_finn.txt";
 			const string leviathan= "leviathan.txt";
@@ -18,7 +17,6 @@ using std::string;
 		public:
 
 			const string getAlice();
-			const string getTestData();
 			const string getHomer();
 			const string getHuckleBerryFinn();
 			const string getLeviathan();

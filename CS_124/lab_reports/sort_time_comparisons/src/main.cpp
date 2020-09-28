@@ -15,20 +15,19 @@ using std::fstream;
 
 int main(){
 
-	fileManip fmo;
-	fstream fstreamObject;
 	createMenu mo;
+		fileManip fmo;
 
-	fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
+	// fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
 
 	// fmo.bubbleSort(fmo.getVector());
 	// fmo.selectionSort(fmo.getVector());
-	fmo.insertionSort(fmo.getVector());
+	// fmo.insertionSort(fmo.getVector());
 	//for(int i = 0; i < 5; i++){
 
 	//	cout << so.testArray[i] << endl;
 	//}
-	// fmo.printTokenizedDataSet(fmo.getVector());
+	 //fmo.printTokenizedDataSet(fmo.getVector());
 
 	return 0;
 }

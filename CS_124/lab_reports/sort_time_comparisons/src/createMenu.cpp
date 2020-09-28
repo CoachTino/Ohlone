@@ -1,10 +1,13 @@
 #include <iostream>
+#include <fstream>
 
 #include "createMenu.h"
+#include "fileManip.h"
 
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
 
 // create menu as a base class
 // create textFiles as a derived class
@@ -13,9 +16,11 @@ using std::endl;
 
 	createMenu::createMenu(){
 
-		choiceOne = 0;
-		choiceTwo = 0;
-		choiceThree = 0;
+		textOptionOne = 0;
+		textOptionTwo = 0;
+		textOptionThree = 0;
+		algorithmOptionOne = 0;
+		algorithmOptionTwo = 0;		
 
 		setUserName();
 	}
@@ -24,7 +29,7 @@ using std::endl;
 	
 		cout << "\nWassup " << getUsersName() << "!" << endl;
 		cout << "\nSo this program will ask you to choose a text file \n";
-		cout << "and let you choose 2 of 5 sorting algorithms\n";
+		cout << "and let you choose 2 of 5 algorithms\n";
 		cout << "to sort the words in the file. That way you can see\n";
 		cout << "which sorting algorithm is the fastest. You'll also\n";
 		cout << "be able to choose if you want to see the first 50\n";
@@ -42,34 +47,49 @@ using std::endl;
 		greetTheUser();
 	}
 	
-	std::string createMenu::getUsersName(){
+	string createMenu::getUsersName(){
 
 		return name;
 	}
 
-	void createMenu::createAlgorithmMenu(){
-	
-		cout << "\nPlease enter the number for two algorithms you want to copmare run times for.\n" << endl;
-		cout << "1: Bubble Sort\n";
-		cout << "2: Selection Sort\n";
-		cout << "3: Insertion Sort\n";
-		cout << "4: Merge Sort\n";
-		cout << "5: Quick Sort\n";
-		cout << "6: Quit the program.\n";
+	void createMenu::createAlgorithmMenu(fileManip & fmo, vector<string> &vect, bool &firstPass){
+				
+		vector<string> temp1(vect);
+		vector<string> temp2(vect);
 
-		cout << "\nFirst option: ";
-		takeUserInput(choiceOne);		
-		if(choiceOne == 6){
-			cout << "Exiting the program...\n";
-			exit(EXIT_FAILURE);
+		if(firstPass){
+			cout << "\nPlease enter the number for two algorithms you want to compare run times for.\n" << endl;
+			cout << "1: Bubble Sort\n";
+			cout << "2: Selection Sort\n";
+			cout << "3: Insertion Sort\n";
+			cout << "4: Merge Sort\n";
+			cout << "5: Quick Sort\n";
+			cout << "6: Quit the program.\n";
+
+			cout << "\nFirst option: ";
+			takeUserInput(algorithmOptionOne);		
+			if(algorithmOptionOne == 6){
+				cout << "Exiting the program...\n";
+				exit(EXIT_FAILURE);
+			}
+			cout << "\nSecond option: ";
+			takeUserInput(algorithmOptionTwo);
+			if(algorithmOptionTwo == 6){
+				cout << "Exiting the program...\n";
+				exit(EXIT_FAILURE);
+			}
+			cout << "\nGood choices! Running the algorithms now...\n\n";
+
+			processAlgorithmInput(fmo, vect, algorithmOptionOne);
+			processAlgorithmInput(fmo, temp2, algorithmOptionOne);
+			processAlgorithmInput(fmo, temp1, algorithmOptionOne);
+
+		}else if(!firstPass){
+			processAlgorithmInput(fmo, vect, algorithmOptionOne);
+			processAlgorithmInput(fmo, temp2, algorithmOptionOne);
+			processAlgorithmInput(fmo, temp1, algorithmOptionOne);
 		}
-		cout << "\nSecond option: ";
-		takeUserInput(choiceTwo);
-		if(choiceTwo == 6){
-			cout << "Exiting the program...\n";
-			exit(EXIT_FAILURE);
-		}
-		cout << "\nGood choices! Running the algorithms now...\n\n";
+		cout << "donezo brody\n";		
 	}
 			
 	void createMenu::createTextFileMenu(){
@@ -83,24 +103,38 @@ using std::endl;
 		cout << "6: Quit the program.\n";
 
 		cout << "\nFirst option: ";
-		takeUserInput(choiceOne);		
-		if(choiceOne == 6){
+		takeUserInput(textOptionOne);		
+		if(textOptionOne == 6){
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
 		}
 		cout << "\nSecond option: ";
-		takeUserInput(choiceTwo);		
-		if(choiceTwo == 6){
+		takeUserInput(textOptionTwo);		
+		if(textOptionTwo == 6){
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
 		}
 		cout << "\nThird option: ";
-		takeUserInput(choiceThree);
-		if(choiceThree == 6){
+		takeUserInput(textOptionThree);
+		if(textOptionThree == 6){
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
 		}
-		createAlgorithmMenu();
+
+		fileManip fmo1, fmo2, fmo3;
+		fstream fstreamObject;
+		bool firstPass = true;
+
+
+		processTextFileInput(fmo1, fstreamObject, textOptionOne);
+		processTextFileInput(fmo2, fstreamObject, textOptionTwo);
+		processTextFileInput(fmo3, fstreamObject, textOptionThree);
+
+		createAlgorithmMenu(fmo1, fmo1.getVector(), firstPass);
+		firstPass = !firstPass;
+		createAlgorithmMenu(fmo2, fmo2.getVector(), firstPass);
+		cout << "entry of third pass\n";
+		createAlgorithmMenu(fmo3, fmo3.getVector(), firstPass);
 	}
 
 	void createMenu::takeUserInput(int &choice){
@@ -133,24 +167,67 @@ using std::endl;
 		}
 	}
 
-	/*
-		choice = ipo.inventoryMenu();
-		while(choice != 4){
-
-			switch(choice){
-				case 1:{
-					ipo.addNewRecords();
-					break;
-				}
-				case 2:{
-					ipo.displayRecords();
-					break;
-				}
-				case 3:{
-					ipo.changeRecords();
-					break;
-				}
+	void createMenu::processAlgorithmInput(fileManip &fmo, vector<string> & vect, int &choice){
+      std::cout << "processAlg\n";
+		switch(choice){
+			case 1:{
+  		    	std::cout << "bubb sort\n";
+				fmo.bubbleSort(vect);
+				fmo.printTokenizedDataSet(vect);
+				break;
 			}
-			choice = ipo.inventoryMenu();
+			case 2:{				      
+				std::cout << "select sort\n";
+				fmo.selectionSort(vect);
+				fmo.printTokenizedDataSet(vect);
+				break;
+			}
+			case 3:{				      
+				std::cout << "insert sort\n";
+				fmo.insertionSort(vect);	
+				fmo.printTokenizedDataSet(vect);
+				break;
+			}
+			case 4:{				      
+				std::cout << "case4\n";
+				fmo.mergeSort(fmo.getVector());
+				break;
+			}			
+			case 5:{
+				std::cout << "case5\n";
+				fmo.quickSort(fmo.getVector());
+				break;
+			}
 		}
-	*/
+	}
+
+	void createMenu::processTextFileInput(fileManip &fmo, fstream &fstreamObject, int &choice){
+      std::cout << "processText\n";
+		switch(choice){
+			case 1:{
+  		    	std::cout << "readingAlice\n";
+				fmo.readFromFile(fstreamObject, fmo.getAlice(), fmo.getVector());
+				break;
+			}
+			case 2:{				      
+				std::cout << "readingHomer\n";
+				fmo.readFromFile(fstreamObject, fmo.getHomer(), fmo.getVector());
+				break;
+			}
+			case 3:{				      
+				std::cout << "readingHuck\n";
+				fmo.readFromFile(fstreamObject, fmo.getHuckleBerryFinn(), fmo.getVector());
+				break;
+			}
+			case 4:{				      
+				std::cout << "readingLeviathan\n";
+				fmo.readFromFile(fstreamObject, fmo.getLeviathan(), fmo.getVector());
+				break;
+			}			
+			case 5:{
+				std::cout << "readingMLK\n";
+				fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
+				break;
+			}
+		}
+	}

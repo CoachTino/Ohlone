@@ -22,6 +22,8 @@
           }
         }
       }
+      std::cout << "bubble done sorting file" << std::endl;
+
     }
 
     void sortingLib::selectionSort(std::vector<std::string>& unsortedVector){
@@ -42,6 +44,7 @@
         }
         swap(unsortedVector[minIndex], unsortedVector[i]);
       }
+      std::cout << "selection done sorting file" << std::endl;
     }
 
     void sortingLib::insertionSort(std::vector<std::string>& unsortedVector){
@@ -61,14 +64,15 @@
         }
         unsortedVector[j+1] = temp;
       }
+      std::cout << "insertion done sorting file" << std::endl;
     }
 
     void sortingLib::mergeSort(std::vector<std::string>& unsortedVector){
 
-
+      std::cout << "merge noice\n";
     }
 
     void sortingLib::quickSort(std::vector<std::string>& unsortedVector){
 
-
+      std::cout << "quick noice\n";
     }
