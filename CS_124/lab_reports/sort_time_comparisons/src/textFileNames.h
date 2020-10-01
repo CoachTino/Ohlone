@@ -13,7 +13,8 @@ using std::string;
 			const string huckleBerryFinn= "huckleberry_finn.txt";
 			const string leviathan= "leviathan.txt";
 			const string mlkDream= "mlk_dream.txt";
-		
+			string fileName;
+
 		public:
 
 			const string getAlice();
@@ -21,6 +22,9 @@ using std::string;
 			const string getHuckleBerryFinn();
 			const string getLeviathan();
 			const string getMlkSpeech();
+			void setFileName(string);
+			string getFileName();
+
 	};
 	
 #endif

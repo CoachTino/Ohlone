@@ -29,9 +29,10 @@
 			void createSearchMenu(fileManip &,vector<string> vect);
 			void validateUserInput(int &);
 			void validateUserInput(std::string &);
-			void processAlgorithmInput(fileManip &, std::vector<std::string> &, int &);
+			void processAlgorithmInput(fileManip &, std::vector<std::string> &, int &, int &);
 			void processTextFileInput(fileManip &, fstream &, int &);
 			void repeatMenu();
+			void printRunTimeTitle(fstream &);
 	};
 
 #endif

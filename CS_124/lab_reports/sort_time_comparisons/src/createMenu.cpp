@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <chrono>
+#include <iomanip>
 
 #include "createMenu.h"
 #include "fileManip.h"
@@ -9,6 +10,9 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::vector;
+using std::setw;
+using std::fixed;
+using std::setprecision;
 using namespace std::chrono;
 
 	createMenu::createMenu(){
@@ -98,28 +102,55 @@ using namespace std::chrono;
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
 		}*/
-		cout << "\nGood choices! Running the algorithms now...\n\n";
+		cout << "\nNice choices! Running the algorithms now...\n";
 
 		int loopCount = 0;
-		do{
-			vector<string> temp1(vect);
-    		// get starting timepoint
-    		auto start = high_resolution_clock::now(); 
-    		processAlgorithmInput(fmo, temp1, algorithmOptionOne);
-			// get ending timepoint 
-    		auto stop = high_resolution_clock::now();
-    		// Get duration. Substart timepoints to  
-    		// get durarion. To cast it to proper unit 
-    		// use duration cast method 
-    		auto duration = duration_cast<microseconds>(stop - start); 
-			cout << "Time taken by function: " << duration.count() << " microseconds" << endl;  
+
+		vector<string> temp1(vect);
+		auto start = high_resolution_clock::now(); 
+		auto stop = high_resolution_clock::now();
+		double duration = duration_cast<milliseconds>(stop - start).count(); 
+		double avg = 0;
+		double sum = 0;
+
+   		cout << "\nSorting half dataset from " << fmo.getFileName() << endl;
+		cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+		cout << setw(21);
+			
+		while(loopCount<3){
+    		start = high_resolution_clock::now(); 
+    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
+    		stop = high_resolution_clock::now();
+			duration = duration_cast<milliseconds>(stop - start).count();
+			cout << duration << " ms" << setw(17);
+			sum += duration;
+			if(loopCount == 2){
+				avg = sum/3;
+				cout   << avg << " ms"<< endl;
+			}
 			loopCount++;
-			if(loopCount == 3){
+		}
+   		cout << "\nSorting full dataset from " << fmo.getFileName() << endl;
+		cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+		cout << setw(21);
+		avg = 0;
+		sum = 0;
+
+		while(loopCount < 6){
+    		start = high_resolution_clock::now(); 
+    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
+    		stop = high_resolution_clock::now();
+			duration = duration_cast<milliseconds>(stop - start).count();
+			cout << duration << " ms" << setw(17);
+			sum += duration;
+			if(loopCount == 5){
+				avg = sum/3;
+				cout  << avg << " ms"<< endl;
 				vect.swap(temp1);
 			}
-			temp1.clear();
-		}while(loopCount < 3);
-		// exit(EXIT_FAILURE);
+			loopCount++;
+		}
+		temp1.clear();
 		createPrintOutMenu(fmo, vect);	
 	}
 			
@@ -211,21 +242,33 @@ using namespace std::chrono;
 		}
 	}
 
-	void createMenu::processAlgorithmInput(fileManip &fmo, vector<string> & vect, int &choice){
+	void createMenu::processAlgorithmInput(fileManip &fmo, vector<string> & vect, int &choice, int &loopCount){
 		switch(choice){
 			case 1:{
   		    	// std::cout << "running bubb sort\n";
-				fmo.bubbleSort(vect);
+  		    	if(loopCount < 3){
+  		    		fmo.halfBubbleSort(vect);
+					break;
+				}else
+					fmo.bubbleSort(vect);
 				break;
 			}
 			case 2:{				      
 				// std::cout << "running select sort\n";
-				fmo.selectionSort(vect);
+  		    	if(loopCount < 3){
+  		    		fmo.halfSelectionSort(vect);
+					break;
+				}else
+					fmo.selectionSort(vect);
 				break;
 			}
 			case 3:{				      
 				// std::cout << "running insert sort\n";
-				fmo.insertionSort(vect);	
+  		    	if(loopCount < 3){
+  		    		fmo.halfInsertionSort(vect);
+					break;
+				}else
+					fmo.insertionSort(vect);
 				break;
 			}
 			case 4:{				      
@@ -242,30 +285,24 @@ using namespace std::chrono;
 	}
 
 	void createMenu::processTextFileInput(fileManip &fmo, fstream &fstreamObject, int &choice){
-      std::cout << "processText\n";
 		switch(choice){
 			case 1:{
-  		    	// std::cout << "readingAlice\n";
 				fmo.readFromFile(fstreamObject, fmo.getAlice(), fmo.getVector());
 				break;
 			}
 			case 2:{				      
-				// std::cout << "readingHomer\n";
 				fmo.readFromFile(fstreamObject, fmo.getHomer(), fmo.getVector());
 				break;
 			}
 			case 3:{				      
-				// std::cout << "readingHuck\n";
 				fmo.readFromFile(fstreamObject, fmo.getHuckleBerryFinn(), fmo.getVector());
 				break;
 			}
 			case 4:{				      
-				// std::cout << "readingLeviathan\n";
 				fmo.readFromFile(fstreamObject, fmo.getLeviathan(), fmo.getVector());
 				break;
 			}			
 			case 5:{
-				// std::cout << "readingMLK\n";
 				fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
 				break;
 			}
@@ -286,5 +323,7 @@ using namespace std::chrono;
 		}else if(repeatOption == 2){
 		
 			cout << "\nPeace out dude!\n";
-		}
+		}else
+
+			cout << "\nPeace out dude!\n";
 	}

@@ -39,12 +39,6 @@ using std::getline;
 		    exit(EXIT_FAILURE);
 		}
 	}
-	
-
-
-
-
-
 
 	int fileManip::getBufferSize(){
 
@@ -70,55 +64,42 @@ using std::getline;
 
 	void fileManip::readFromFile(fstream &fileObject, string fileName, vector<string>& vect){
 
+		setFileName(fileName);
 		delimeters doo;
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
 
 			string word;
 			while (fileObject >> word){
-					
-					word = tokenizeDataSet(word, doo.getHyphen());
-					word = tokenizeDataSet(word, doo.getComma());
-					word = tokenizeDataSet(word, doo.getQuotationMark());
-					word = tokenizeDataSet(word, doo.getApostrophe());
-					word = tokenizeDataSet(word, doo.getExclamationPoint());
-					word = tokenizeDataSet(word, doo.getColon());
-					word = tokenizeDataSet(word, doo.getPeriod());
-					word = tokenizeDataSet(word, doo.getPercent());
-					word = tokenizeDataSet(word, doo.getOpeningBracket());
-					word = tokenizeDataSet(word, doo.getClosingBracket());
-					word = tokenizeDataSet(word, doo.getClosingParenthesis());
-					word = tokenizeDataSet(word, doo.getOpeningParenthesis());
-				    word = tokenizeDataSet(word, doo.getAsterisk());
-					word = tokenizeDataSet(word, doo.getPoundSign());
-					word = tokenizeDataSet(word, doo.getUnderscore());
-					word = tokenizeDataSet(word, doo.getSemiColon());
-					word = tokenizeDataSet(word, doo.getDollarSign());
+				
+				word = tokenizeDataSet(word, doo.getHyphen());
+				word = tokenizeDataSet(word, doo.getComma());
+				word = tokenizeDataSet(word, doo.getQuotationMark());
+				word = tokenizeDataSet(word, doo.getApostrophe());
+				word = tokenizeDataSet(word, doo.getExclamationPoint());
+				word = tokenizeDataSet(word, doo.getColon());
+				word = tokenizeDataSet(word, doo.getPeriod());
+				word = tokenizeDataSet(word, doo.getPercent());
+				word = tokenizeDataSet(word, doo.getOpeningBracket());
+				word = tokenizeDataSet(word, doo.getClosingBracket());
+				word = tokenizeDataSet(word, doo.getClosingParenthesis());
+				word = tokenizeDataSet(word, doo.getOpeningParenthesis());
+			    word = tokenizeDataSet(word, doo.getAsterisk());
+				word = tokenizeDataSet(word, doo.getPoundSign());
+				word = tokenizeDataSet(word, doo.getUnderscore());
+				word = tokenizeDataSet(word, doo.getSemiColon());
+				word = tokenizeDataSet(word, doo.getDollarSign());
 
-					if(word == "YEEEEET"){		
-						//cout << vect.back() << endl;
-
-						vect.push_back(word);
-						//cout << vect.back() << endl;
-
-						vect.pop_back();
-						//cout << vect.back() << endl;
-
-					}else if(word[0] < 48){
-
-						//cout << vect.back() << endl;
-
-						vect.push_back(word);
-						//cout << vect.back() << endl;
-
-						vect.pop_back();
-						//cout << vect.back() << endl;
-					}else{
-						vect.push_back(word);
-					}
-
+				if(word == "YEEEEET"){		
+					vect.push_back(word);
+					vect.pop_back();
+				}else if(word[0] < 48){
+					vect.push_back(word);
+					vect.pop_back();
+				}else{
+					vect.push_back(word);
+				}
 			 }
-
 			fileObject.close();
 
 		}else if(!fileObject){
@@ -126,7 +107,6 @@ using std::getline;
 		    cout << "Error reading file!" << endl;
 		    exit(EXIT_FAILURE);
 		}
-		cout << "done reading file" << endl;
 	}
 
 	string fileManip::tokenizeDataSet(string& str,char delim){
@@ -148,17 +128,10 @@ using std::getline;
 
 			int tokenStart = 0; 
 			int delimPosition = str.find(delim);
-			
 			delimPosition = str.find(delim);
-
-			// extract the token
 			string tok = str.substr(tokenStart, delimPosition - tokenStart);
 			temp = tok;
-
-			// move delimPosition to the next character position
 			delimPosition++;
-
-			// move tokenStart to delimPosition
 			tokenStart = delimPosition;
 		}
 		return temp;	

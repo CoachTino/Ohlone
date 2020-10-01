@@ -16,7 +16,6 @@ using std::fstream;
 int main(){
 
 	createMenu mo;
-	//fileManip fmo;
 
 	return 0;
 }

@@ -28,3 +28,12 @@ using std::string;
 		return mlkDream;
 	}
 
+	void textFileNames::setFileName(string name){
+
+		fileName = name;
+	}
+
+	string textFileNames::getFileName(){
+
+		return fileName;
+	}
