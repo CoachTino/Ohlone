@@ -201,6 +201,7 @@ using namespace std::chrono;
 			}
 			temp1.clear();
 		}
+		cout << "The algorithm with the lowest average score is clearly the fastest!\n";
 		createPrintOutMenu(fmo, vect);	
 	}
 			
