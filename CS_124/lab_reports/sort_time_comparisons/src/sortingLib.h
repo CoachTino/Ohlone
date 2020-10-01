@@ -28,6 +28,10 @@
 			void quickSort(std::vector<std::string>&, int, int);
 			int quickSortPartition(std::vector<std::string> &, int, int);
 			void quickSortSwap(std::string &, std::string &);
+
+			// half quick sort
+			void halfQuickSort(std::vector<std::string>&, int, int);
+			int halfQuickSortPartition(std::vector<std::string> &, int, int);
 	};
 
 #endif

@@ -159,3 +159,34 @@
         value1 = value2;
         value2 = temp;
     }
+    void sortingLib::halfQuickSort(std::vector<std::string> &set, int start, int end){
+        
+        int pivotPoint;
+        
+        if(start < end){
+         
+            pivotPoint = halfQuickSortPartition(set, start, end);
+            halfQuickSort(set, start, pivotPoint - 1);
+            halfQuickSort(set, pivotPoint + 1, end); 
+        }
+    }
+
+    int sortingLib::halfQuickSortPartition(std::vector<std::string> &set, int start, int end){
+        
+        int pivotIndex, mid;
+        std::string pivotValue;
+        mid = (start + end) / 2;
+        quickSortSwap(set[start], set[mid]);
+        pivotIndex = start;
+        pivotValue = set[start];
+        for(int scan = start + 1; scan <= end; scan++){
+         
+            if (set[scan] < pivotValue){
+                
+                pivotIndex++;
+                quickSortSwap(set[pivotIndex], set[scan]);
+            }
+        }
+        quickSortSwap(set[start], set[pivotIndex]);
+        return pivotIndex;
+    }

@@ -32,7 +32,6 @@
 			void processAlgorithmInput(fileManip &, std::vector<std::string> &, int &, int &);
 			void processTextFileInput(fileManip &, fstream &, int &);
 			void repeatMenu();
-			void printRunTimeTitle(fstream &);
 	};
 
 #endif

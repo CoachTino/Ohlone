@@ -95,62 +95,112 @@ using namespace std::chrono;
 		if(algorithmOptionOne == 6){
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
-		}/*
+		}
 		cout << "Second option: ";
 		validateUserInput(algorithmOptionTwo);
 		if(algorithmOptionTwo == 6){
 			cout << "Exiting the program...\n";
 			exit(EXIT_FAILURE);
-		}*/
+		}
 		cout << "\nNice choices! Running the algorithms now...\n";
+		if(algorithmOptionOne){
+			int loopCount = 0;
 
-		int loopCount = 0;
+			vector<string> temp1(vect);
+			auto start = high_resolution_clock::now(); 
+			auto stop = high_resolution_clock::now();
+			double duration = duration_cast<milliseconds>(stop - start).count(); 
+			double avg = 0;
+			double sum = 0;
 
-		vector<string> temp1(vect);
-		auto start = high_resolution_clock::now(); 
-		auto stop = high_resolution_clock::now();
-		double duration = duration_cast<milliseconds>(stop - start).count(); 
-		double avg = 0;
-		double sum = 0;
-
-   		cout << "\nSorting half dataset from " << fmo.getFileName() << endl;
-		cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
-		cout << setw(21);
-			
-		while(loopCount<3){
-    		start = high_resolution_clock::now(); 
-    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
-    		stop = high_resolution_clock::now();
-			duration = duration_cast<milliseconds>(stop - start).count();
-			cout << duration << " ms" << setw(17);
-			sum += duration;
-			if(loopCount == 2){
-				avg = sum/3;
-				cout   << avg << " ms"<< endl;
+	   		cout << "\nSorting half dataset from " << fmo.getFileName() << endl;
+			cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+			cout << setw(21);
+				
+			while(loopCount<3){
+	    		start = high_resolution_clock::now(); 
+	    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
+	    		stop = high_resolution_clock::now();
+				duration = duration_cast<milliseconds>(stop - start).count();
+				cout << duration << " ms" << setw(17);
+				sum += duration;
+				if(loopCount == 2){
+					avg = sum/3;
+					cout   << avg << " ms"<< endl;
+				}
+				loopCount++;
 			}
-			loopCount++;
-		}
-   		cout << "\nSorting full dataset from " << fmo.getFileName() << endl;
-		cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
-		cout << setw(21);
-		avg = 0;
-		sum = 0;
+	   		cout << "\nSorting full dataset from " << fmo.getFileName() << endl;
+			cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+			cout << setw(21);
+			avg = 0;
+			sum = 0;
 
-		while(loopCount < 6){
-    		start = high_resolution_clock::now(); 
-    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
-    		stop = high_resolution_clock::now();
-			duration = duration_cast<milliseconds>(stop - start).count();
-			cout << duration << " ms" << setw(17);
-			sum += duration;
-			if(loopCount == 5){
-				avg = sum/3;
-				cout  << avg << " ms"<< endl;
-				vect.swap(temp1);
+			while(loopCount < 6){
+	    		start = high_resolution_clock::now(); 
+	    		processAlgorithmInput(fmo, temp1, algorithmOptionOne, loopCount);
+	    		stop = high_resolution_clock::now();
+				duration = duration_cast<milliseconds>(stop - start).count();
+				cout << duration << " ms" << setw(17);
+				sum += duration;
+				if(loopCount == 5){
+					avg = sum/3;
+					cout  << avg << " ms"<< endl;
+					vect.swap(temp1);
+				}
+				loopCount++;
 			}
-			loopCount++;
+			temp1.clear();
 		}
-		temp1.clear();
+		if(algorithmOptionTwo){
+			int loopCount = 0;
+
+			vector<string> temp1(vect);
+			auto start = high_resolution_clock::now(); 
+			auto stop = high_resolution_clock::now();
+			double duration = duration_cast<milliseconds>(stop - start).count(); 
+			double avg = 0;
+			double sum = 0;
+
+	   		cout << "\nSorting half dataset from " << fmo.getFileName() << endl;
+			cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+			cout << setw(21);
+				
+			while(loopCount<3){
+	    		start = high_resolution_clock::now(); 
+	    		processAlgorithmInput(fmo, temp1, algorithmOptionTwo, loopCount);
+	    		stop = high_resolution_clock::now();
+				duration = duration_cast<milliseconds>(stop - start).count();
+				cout << duration << " ms" << setw(17);
+				sum += duration;
+				if(loopCount == 2){
+					avg = sum/3;
+					cout   << avg << " ms"<< endl;
+				}
+				loopCount++;
+			}
+	   		cout << "\nSorting full dataset from " << fmo.getFileName() << endl;
+			cout << "Runtime: " << setw(15) << "1st Run" << setw(20) << "2nd Run" << setw(20) << "3rd Run"  << setw(20) << "Average" << endl;
+			cout << setw(21);
+			avg = 0;
+			sum = 0;
+
+			while(loopCount < 6){
+	    		start = high_resolution_clock::now(); 
+	    		processAlgorithmInput(fmo, temp1, algorithmOptionTwo, loopCount);
+	    		stop = high_resolution_clock::now();
+				duration = duration_cast<milliseconds>(stop - start).count();
+				cout << duration << " ms" << setw(17);
+				sum += duration;
+				if(loopCount == 5){
+					avg = sum/3;
+					cout  << avg << " ms"<< endl;
+					vect.swap(temp1);
+				}
+				loopCount++;
+			}
+			temp1.clear();
+		}
 		createPrintOutMenu(fmo, vect);	
 	}
 			
@@ -245,7 +295,6 @@ using namespace std::chrono;
 	void createMenu::processAlgorithmInput(fileManip &fmo, vector<string> & vect, int &choice, int &loopCount){
 		switch(choice){
 			case 1:{
-  		    	// std::cout << "running bubb sort\n";
   		    	if(loopCount < 3){
   		    		fmo.halfBubbleSort(vect);
 					break;
@@ -253,8 +302,7 @@ using namespace std::chrono;
 					fmo.bubbleSort(vect);
 				break;
 			}
-			case 2:{				      
-				// std::cout << "running select sort\n";
+			case 2:{	
   		    	if(loopCount < 3){
   		    		fmo.halfSelectionSort(vect);
 					break;
@@ -262,8 +310,7 @@ using namespace std::chrono;
 					fmo.selectionSort(vect);
 				break;
 			}
-			case 3:{				      
-				// std::cout << "running insert sort\n";
+			case 3:{	
   		    	if(loopCount < 3){
   		    		fmo.halfInsertionSort(vect);
 					break;
@@ -271,13 +318,20 @@ using namespace std::chrono;
 					fmo.insertionSort(vect);
 				break;
 			}
-			case 4:{				      
-				std::cout << "running case4\n";
-				fmo.mergeSort(fmo.getVector());
+			case 4:{		
+  		    	if(loopCount < 3){
+  		    		//fmo.halfQuickSort(vect, 0, (vect.size()-1/2));
+					break;
+				}else
+					//fmo.quickSort(vect, 0, vect.size());
 				break;
-			}			
+			}
 			case 5:{
-				fmo.quickSort(vect, 0, vect.size());
+  		    	if(loopCount < 3){
+  		    		fmo.halfQuickSort(vect, 0, (vect.size()-1) / 2);
+					break;
+				}else
+					fmo.quickSort(vect, 0, vect.size());
 				break;
 			}
 		}
@@ -326,3 +380,4 @@ using namespace std::chrono;
 
 			cout << "\nPeace out dude!\n";
 	}
+
