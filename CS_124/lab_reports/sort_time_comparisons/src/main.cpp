@@ -16,18 +16,7 @@ using std::fstream;
 int main(){
 
 	createMenu mo;
-		fileManip fmo;
-
-	// fmo.readFromFile(fstreamObject, fmo.getMlkSpeech(), fmo.getVector());
-
-	// fmo.bubbleSort(fmo.getVector());
-	// fmo.selectionSort(fmo.getVector());
-	// fmo.insertionSort(fmo.getVector());
-	//for(int i = 0; i < 5; i++){
-
-	//	cout << so.testArray[i] << endl;
-	//}
-	 //fmo.printTokenizedDataSet(fmo.getVector());
+	//fileManip fmo;
 
 	return 0;
 }

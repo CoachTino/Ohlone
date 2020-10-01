@@ -26,7 +26,9 @@ using std::vector;
 			void writeToFile(fstream &, string [], string);
 			void readFromFile(fstream &, const string, vector<string>& vect);
 			string tokenizeDataSet(string&, char);
-			void printTokenizedDataSet(vector<string>);
+			void printFirstFiftyTokenizedDataSet(vector<string>);
+			void printLastFiftyTokenizedDataSet(vector<string>);
+			void searchVector(vector<string>, int, string);
 	};
 
 #endif

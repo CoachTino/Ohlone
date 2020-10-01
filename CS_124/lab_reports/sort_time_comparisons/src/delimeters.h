@@ -7,8 +7,8 @@
 
 			const char hyphen = '-';
 			const char quotationMark = '"';
-			//const char openingQuotationMark = '“';
-			//const char closingQuotationMark = '”';
+			const char asterisk = '*';
+			const char poundSign = '#';
 			const char exclamationPoint = '!';
 			const char space = ' ';
 			const char period = '.';
@@ -18,22 +18,23 @@
 			const char closingBracket = ']';
 			const char openingBracket = '[';
 			const char colon = ':';
-			const char morseCode = '-';
+			const char percent = '%';
 			const char closingParenthesis = ')';
 			const char openingParenthesis = '(';
 			const char underScore = '_';
 			const char semiColon = ';';
+			const char dollarSign = '$';
 		
 		public:
 
 			const char getHyphen();
 			const char getQuotationMark();
-			//const char getOpeningQuotationMark();
-			//const char getClosingQuotationMark();
+			const char getAsterisk();
+			const char getPoundSign();
 			const char getExclamationPoint();
 			const char getSpace();
 			const char getColon();
-			const char getMorseCode();
+			const char getPercent();
 			const char getPeriod();
 			const char getComma();
 			const char getQuestionMark();
@@ -44,6 +45,7 @@
 			const char getOpeningParenthesis();
 			const char getUnderscore();
 			const char getSemiColon();
+			const char getDollarSign();
 	};
 
 #endif

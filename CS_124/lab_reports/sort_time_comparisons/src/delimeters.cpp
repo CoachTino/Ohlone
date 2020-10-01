@@ -9,17 +9,17 @@
 
 		return quotationMark;
 	}
-	/*
-	const char delimeters::getOpeningQuotationMark(){
+	
+	const char delimeters::getAsterisk(){
 
-		return openingQuotationMark;
+		return asterisk;
 	}
 
-	const char delimeters::getClosingQuotationMark(){
+	const char delimeters::getPoundSign(){
 
-		return closingQuotationMark;
+		return poundSign;
 	}
-*/
+
 	const char delimeters::getExclamationPoint(){
 
 		return exclamationPoint;
@@ -55,9 +55,9 @@
 		return apostrophe;
 	}
 
-	const char delimeters::getMorseCode(){
+	const char delimeters::getPercent(){
 
-		return morseCode;
+		return percent;
 	}
 
 	const char delimeters::getClosingBracket(){
@@ -88,4 +88,9 @@
 	const char delimeters::getSemiColon(){
 
 		return semiColon;
+	}
+
+	const char delimeters::getDollarSign(){
+
+		return dollarSign;
 	}

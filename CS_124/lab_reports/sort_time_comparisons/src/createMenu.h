@@ -11,7 +11,9 @@
 
 			int textOptionOne, textOptionTwo, textOptionThree;
 			int algorithmOptionOne, algorithmOptionTwo; 
-			std::string name;
+			int printOptionOne, printOptionTwo;
+			int repeatOption;
+			std::string name, searchString;
 
 
 		public:
@@ -20,13 +22,16 @@
 			void greetTheUser();
 			void setUserName();
 			std::string getUsersName();
-
-			void createAlgorithmMenu(fileManip &, std::vector<std::string> &, bool &secondPass);
+			
 			void createTextFileMenu();
-			void takeUserInput(int &);
+			void createAlgorithmMenu(fileManip &, std::vector<std::string> &);
+			void createPrintOutMenu(fileManip &,vector<string> vect);
+			void createSearchMenu(fileManip &,vector<string> vect);
+			void validateUserInput(int &);
+			void validateUserInput(std::string &);
 			void processAlgorithmInput(fileManip &, std::vector<std::string> &, int &);
 			void processTextFileInput(fileManip &, fstream &, int &);
-
+			void repeatMenu();
 	};
 
 #endif
