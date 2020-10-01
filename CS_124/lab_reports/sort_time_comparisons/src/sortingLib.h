@@ -25,7 +25,9 @@
 			void mergeSort(std::vector<std::string>&t);		
 
 			// quick sort
-			void quickSort(std::vector<std::string>&);
+			void quickSort(std::vector<std::string>&, int, int);
+			int quickSortPartition(std::vector<std::string> &, int, int);
+			void quickSortSwap(std::string &, std::string &);
 	};
 
 #endif

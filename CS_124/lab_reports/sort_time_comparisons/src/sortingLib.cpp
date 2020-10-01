@@ -120,7 +120,42 @@
       std::cout << "merge noice\n";
     }
 
-    void sortingLib::quickSort(std::vector<std::string>& unsortedVector){
+    void sortingLib::quickSort(std::vector<std::string> &set, int start, int end){
+        
+        int pivotPoint;
+        
+        if(start < end){
+         
+            pivotPoint = quickSortPartition(set, start, end);
+            quickSort(set, start, pivotPoint - 1);
+            quickSort(set, pivotPoint + 1, end); 
+        }
+    }
 
-      std::cout << "quick noice\n";
+    int sortingLib::quickSortPartition(std::vector<std::string> &set, int start, int end){
+        
+        int pivotIndex, mid;
+        std::string pivotValue;
+        mid = (start + end) / 2;
+        quickSortSwap(set[start], set[mid]);
+        pivotIndex = start;
+        pivotValue = set[start];
+        for(int scan = start + 1; scan <= end; scan++){
+         
+            if (set[scan] < pivotValue){
+                
+                pivotIndex++;
+                quickSortSwap(set[pivotIndex], set[scan]);
+            }
+        }
+        quickSortSwap(set[start], set[pivotIndex]);
+        return pivotIndex;
+    }
+
+    void sortingLib::quickSortSwap(std::string &value1, std::string &value2){
+        
+        std::string temp = value1;
+        
+        value1 = value2;
+        value2 = temp;
     }

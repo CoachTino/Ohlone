@@ -277,8 +277,7 @@ using namespace std::chrono;
 				break;
 			}			
 			case 5:{
-				std::cout << "running case5\n";
-				fmo.quickSort(fmo.getVector());
+				fmo.quickSort(vect, 0, vect.size());
 				break;
 			}
 		}
