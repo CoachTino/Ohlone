@@ -3,8 +3,8 @@
 #include <chrono>
 #include <iomanip>
 
-#include "createMenu.h"
-#include "fileManip.h"
+#include "vleiaCreateMenu.h"
+#include "vleiaFileManip.h"
 
 using std::cout;
 using std::cin;
@@ -15,7 +15,7 @@ using std::fixed;
 using std::setprecision;
 using namespace std::chrono;
 
-	createMenu::createMenu(){
+	vleiaCreateMenu::vleiaCreateMenu(){
 
 		textOptionOne = 0;
 		textOptionTwo = 0;
@@ -29,7 +29,7 @@ using namespace std::chrono;
 		setUserName();
 	}
 
-	void createMenu::greetTheUser(){
+	void vleiaCreateMenu::greetTheUser(){
 	
 		cout << "\nWassup " << getUsersName() << "!" << endl;
 		cout << "\nSo this program will ask you to choose a text file \n";
@@ -43,7 +43,7 @@ using namespace std::chrono;
 		createTextFileMenu();
 	}
 
-	void createMenu::setUserName(){
+	void vleiaCreateMenu::setUserName(){
 
 		cout << "\nHello! What's your name? ";
 		getline(cin, name);
@@ -51,12 +51,12 @@ using namespace std::chrono;
 		greetTheUser();
 	}
 	
-	string createMenu::getUsersName(){
+	string vleiaCreateMenu::getUsersName(){
 
 		return name;
 	}
 
-	void createMenu::createTextFileMenu(){
+	void vleiaCreateMenu::createTextFileMenu(){
 
 		cout << "\nPlease enter the number for three texts you want to sort." << endl;
 		cout << "1: Alice's Adventures in Wonderland\n";
@@ -73,14 +73,14 @@ using namespace std::chrono;
 			exit(EXIT_FAILURE);
 		}
 
-		fileManip fmo1;
+		vleiaFileManip fmo1;
 		fstream fstreamObject;
 		
 		processTextFileInput(fmo1, fstreamObject, textOptionOne);
 		createAlgorithmMenu(fmo1, fmo1.getVector());
 	}
 
-	void createMenu::createAlgorithmMenu(fileManip & fmo, vector<string> &vect){
+	void vleiaCreateMenu::createAlgorithmMenu(vleiaFileManip & fmo, vector<string> &vect){
 
 		cout << "\nPlease enter the number for two algorithms you want to compare run times for." << endl;
 		cout << "1: Bubble Sort\n";
@@ -205,7 +205,7 @@ using namespace std::chrono;
 		createPrintOutMenu(fmo, vect);	
 	}
 			
-	void createMenu::createPrintOutMenu(fileManip & fmo, vector<string> vect){
+	void vleiaCreateMenu::createPrintOutMenu(vleiaFileManip & fmo, vector<string> vect){
 
 		cout << "\nPlease enter the number to select the output you'd like." << endl;
 		cout << "1: Print the first 50 words of the sorted array\n";
@@ -228,7 +228,7 @@ using namespace std::chrono;
 		createSearchMenu(fmo, vect);
 	}
 
-	void createMenu::createSearchMenu(fileManip &fmo, vector<string> vect){
+	void vleiaCreateMenu::createSearchMenu(vleiaFileManip &fmo, vector<string> vect){
 
 		cout << "\n\nPlease enter a word you would like to search for, or type 1 to quit the program: ";
 		validateUserInput(searchString);		
@@ -240,7 +240,7 @@ using namespace std::chrono;
 		repeatMenu();
 	}
 
-	void createMenu::validateUserInput(int &choice){
+	void vleiaCreateMenu::validateUserInput(int &choice){
 
 		int attempts = 1;
 
@@ -270,7 +270,7 @@ using namespace std::chrono;
 		}
 	}
 
-	void createMenu::validateUserInput(string &choice){
+	void vleiaCreateMenu::validateUserInput(string &choice){
 
 		int attempts = 1;
 
@@ -293,7 +293,7 @@ using namespace std::chrono;
 		}
 	}
 
-	void createMenu::processAlgorithmInput(fileManip &fmo, vector<string> & vect, int &choice, int &loopCount){
+	void vleiaCreateMenu::processAlgorithmInput(vleiaFileManip &fmo, vector<string> & vect, int &choice, int &loopCount){
 		switch(choice){
 			case 1:{
   		    	if(loopCount < 3){
@@ -338,7 +338,7 @@ using namespace std::chrono;
 		}
 	}
 
-	void createMenu::processTextFileInput(fileManip &fmo, fstream &fstreamObject, int &choice){
+	void vleiaCreateMenu::processTextFileInput(vleiaFileManip &fmo, fstream &fstreamObject, int &choice){
 		switch(choice){
 			case 1:{
 				fmo.readFromFile(fstreamObject, fmo.getAlice(), fmo.getVector());
@@ -363,7 +363,7 @@ using namespace std::chrono;
 		}
 	}
 
-	void createMenu::repeatMenu(){
+	void vleiaCreateMenu::repeatMenu(){
 
 		cout << "\nPlease enter the number to start over or exit the program." << endl;
 		cout << "1: Restart from the beginning.\n";

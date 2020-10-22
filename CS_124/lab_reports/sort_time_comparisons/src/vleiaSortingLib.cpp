@@ -1,9 +1,9 @@
-#include "sortingLib.h"
+#include "vleiaSortingLib.h"
 #include <iostream>
 #include <vector>
 #include <string>
 
-    void sortingLib::bubbleSort(std::vector<std::string>& unsortedVector){//, int arraySize){
+    void vleiaSortingLib::bubbleSort(std::vector<std::string>& unsortedVector){//, int arraySize){
 
       std::string temp;
       int counter = unsortedVector.size();
@@ -20,7 +20,7 @@
       }
     }
 
-    void sortingLib::halfBubbleSort(std::vector<std::string>& unsortedVector){//, int arraySize){
+    void vleiaSortingLib::halfBubbleSort(std::vector<std::string>& unsortedVector){//, int arraySize){
 
       std::string temp;
       int counter = ((unsortedVector.size()- 1) / 2);
@@ -37,7 +37,7 @@
       }
     }
 
-    void sortingLib::selectionSort(std::vector<std::string>& unsortedVector){
+    void vleiaSortingLib::selectionSort(std::vector<std::string>& unsortedVector){
 
       int minIndex;
       int counter = unsortedVector.size();
@@ -57,7 +57,7 @@
       }
     }
 
-    void sortingLib::halfSelectionSort(std::vector<std::string>& unsortedVector){
+    void vleiaSortingLib::halfSelectionSort(std::vector<std::string>& unsortedVector){
 
       int minIndex;
       int counter = (unsortedVector.size()- 1) / 2;
@@ -77,7 +77,7 @@
       }
     }
 
-    void sortingLib::insertionSort(std::vector<std::string>& unsortedVector){
+    void vleiaSortingLib::insertionSort(std::vector<std::string>& unsortedVector){
 
       std::string temp;
       int counter = unsortedVector.size();
@@ -96,7 +96,7 @@
       }
     }
 
-    void sortingLib::halfInsertionSort(std::vector<std::string>& unsortedVector){
+    void vleiaSortingLib::halfInsertionSort(std::vector<std::string>& unsortedVector){
 
       std::string temp;
       int counter = (unsortedVector.size()- 1) / 2;
@@ -115,12 +115,12 @@
       }
     }
 
-    void sortingLib::mergeSort(std::vector<std::string>& unsortedVector){
+    void vleiaSortingLib::mergeSort(std::vector<std::string>& unsortedVector){
 
       std::cout << "merge noice\n";
     }
 
-    void sortingLib::quickSort(std::vector<std::string> &set, int start, int end){
+    void vleiaSortingLib::quickSort(std::vector<std::string> &set, int start, int end){
         
         int pivotPoint;
         
@@ -132,7 +132,7 @@
         }
     }
 
-    int sortingLib::quickSortPartition(std::vector<std::string> &set, int start, int end){
+    int vleiaSortingLib::quickSortPartition(std::vector<std::string> &set, int start, int end){
         
         int pivotIndex, mid;
         std::string pivotValue;
@@ -152,14 +152,14 @@
         return pivotIndex;
     }
 
-    void sortingLib::quickSortSwap(std::string &value1, std::string &value2){
+    void vleiaSortingLib::quickSortSwap(std::string &value1, std::string &value2){
         
         std::string temp = value1;
         
         value1 = value2;
         value2 = temp;
     }
-    void sortingLib::halfQuickSort(std::vector<std::string> &set, int start, int end){
+    void vleiaSortingLib::halfQuickSort(std::vector<std::string> &set, int start, int end){
         
         int pivotPoint;
         
@@ -171,7 +171,7 @@
         }
     }
 
-    int sortingLib::halfQuickSortPartition(std::vector<std::string> &set, int start, int end){
+    int vleiaSortingLib::halfQuickSortPartition(std::vector<std::string> &set, int start, int end){
         
         int pivotIndex, mid;
         std::string pivotValue;

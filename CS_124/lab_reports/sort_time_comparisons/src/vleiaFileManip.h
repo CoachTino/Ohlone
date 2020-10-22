@@ -1,8 +1,8 @@
-#ifndef FILEMANIP_H
-#define FILEMANIP_H
+#ifndef VLEIAFILEMANIP_H
+#define VLEIAFILEMANIP_H
 
-#include "sortingLib.h"
-#include "textFileNames.h"
+#include "vleiaSortingLib.h"
+#include "vleiaTextFileNames.h"
 
 #include <fstream>
 #include <vector>
@@ -11,7 +11,7 @@ using std::string;
 using std::fstream;
 using std::vector;
 
-	class fileManip: public textFileNames, public sortingLib{
+	class vleiaFileManip: public vleiaTextFileNames, public vleiaSortingLib{
 
 		private:
 

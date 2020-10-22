@@ -1,10 +1,10 @@
-#ifndef SORTINGALGORITHMS_H
-#define SORTINGALGORITHMS_H
+#ifndef VLEIASORTINGALGORITHMS_H
+#define VLEIASORTINGALGORITHMS_H
 
 #include <string>
 #include <vector>
 
-	class sortingLib{
+	class vleiaSortingLib{
 		
 		public:
 

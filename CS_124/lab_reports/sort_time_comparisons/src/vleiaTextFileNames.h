@@ -1,10 +1,10 @@
-#ifndef TEXTFILENAMES_H
-#define TEXTFILENAMES_H
+#ifndef VLEIATEXTFILENAMES_H
+#define VLEIATEXTFILENAMES_H
 #include <string>
 
 using std::string;
 
-	class textFileNames{
+	class vleiaTextFileNames{
 
 		private:
 

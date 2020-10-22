@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "delimeters.h"
-#include "sortingLib.h"
-#include "fileManip.h"
+#include "vleiaDelimeters.h"
+#include "vleiaSortingLib.h"
+#include "vleiaFileManip.h"
 #include <fstream>
 #include <vector>
 
@@ -14,12 +14,12 @@ using std::string;
 using std::ios;
 using std::getline;
 
-	vector<string>& fileManip::getVector(){
+	vector<string>& vleiaFileManip::getVector(){
 
 		return tokenizedDataSet;
 	}
 
-	void fileManip::setBufferSize(fstream &fileObject, string fileName){
+	void vleiaFileManip::setBufferSize(fstream &fileObject, string fileName){
 
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
@@ -40,12 +40,12 @@ using std::getline;
 		}
 	}
 
-	int fileManip::getBufferSize(){
+	int vleiaFileManip::getBufferSize(){
 
 		return bufferSize;
 	}
 
-	void fileManip::writeToFile(fstream &file, string array[], string fileName){
+	void vleiaFileManip::writeToFile(fstream &file, string array[], string fileName){
 
 		file.open(fileName, ios::out);
 		if(file){
@@ -62,10 +62,10 @@ using std::getline;
 		}
 	}
 
-	void fileManip::readFromFile(fstream &fileObject, string fileName, vector<string>& vect){
+	void vleiaFileManip::readFromFile(fstream &fileObject, string fileName, vector<string>& vect){
 
 		setFileName(fileName);
-		delimeters doo;
+		vleiaDelimeters doo;
 		fileObject.open(fileName, ios::in);
 		if(fileObject){
 
@@ -109,7 +109,7 @@ using std::getline;
 		}
 	}
 
-	string fileManip::tokenizeDataSet(string& str,char delim){
+	string vleiaFileManip::tokenizeDataSet(string& str,char delim){
 		bool allTheSame = false;
 		string temp;
 
@@ -137,20 +137,20 @@ using std::getline;
 		return temp;	
 	}
 
-	void fileManip::printFirstFiftyTokenizedDataSet(vector<string> vect){
+	void vleiaFileManip::printFirstFiftyTokenizedDataSet(vector<string> vect){
 
 		for (int i = 0; i < 50; i++){//vect.size(); i++){
 			cout  << vect[i] << " ";
 		}			
 	}
-	void fileManip::printLastFiftyTokenizedDataSet(vector<string> vect){
+	void vleiaFileManip::printLastFiftyTokenizedDataSet(vector<string> vect){
 
 		for(int h = (vect.size() - 1); h > (vect.size() - 50); h--){
 			cout  << vect[h] << " ";
 		}
 	}
 
-	void fileManip::searchVector(vector<string> vect, int size, string key){
+	void vleiaFileManip::searchVector(vector<string> vect, int size, string key){
 
 		int first = 0;
 		int last = size - 1;

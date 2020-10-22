@@ -1,7 +1,7 @@
-#ifndef DELIMETERS_H
-#define DELIMETERS_H
+#ifndef VLEIADELIMETERS_H
+#define VLEIADELIMETERS_H
 
-	class delimeters{
+	class vleiaDelimeters{
 
 		private:
 
