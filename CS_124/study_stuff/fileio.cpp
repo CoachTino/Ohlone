@@ -26,7 +26,7 @@
 		return 0;
 	}
 
-	void writeToFile(std::fstream &file, int* arrPointer, const int& x){
+	void writeToFile(std::ofstream &file, int* arrPointer, const int& x){
 
 		file.open("data.txt", std::ios::in | std::ios::out);
 		if(file){
@@ -34,6 +34,9 @@
 			for (int i = 0; i < x; ++i){
 
 				file << *arrPointer << "\t";
+
+				//  >> reads data into memory whether its from console input or from a file
+				//  << prints out data from memeory to the console or a file
 			}
 			file.close();
 		}else if (!file){
