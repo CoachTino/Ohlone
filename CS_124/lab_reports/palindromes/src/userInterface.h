@@ -3,6 +3,7 @@
 
 #include "dataValidation.h"
 #include "linkedList.h"
+#include "fileInputAndOutput.h"
 
 	class userInterface: public dataValidation{//, public fileInputAndOutput{
 
@@ -24,6 +25,7 @@
 		void createMenu();
 		void setUserInputPalindrome();
 		void createTextFileMenu();
+		void createOptionalTextFileMenu(fileInputAndOutput &);
 		
 		void createStackFromUserInputPalindrome(linkedList &);		
 		void createQueueFromUserInputPalindrome(linkedList &);

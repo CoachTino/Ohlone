@@ -31,7 +31,7 @@ using std::ios;
 		return tinosSamplePalindromes;
 	}
 
-	void fileInputAndOutput::writeToFile(string fn){
+	void fileInputAndOutput::writeToFile(fileInputAndOutput &rfo, string fn){
 
 		fstream fileObject;
 
@@ -40,13 +40,13 @@ using std::ios;
 
 			ListNode *nodePointer;
 
-			if(!getHead()){
+			if(!rfo.getHead()){
 
 	          cout << "\nThe list is empty.\n";
 	          return;
 	        }else{
 
-	        	nodePointer = getHead();
+	        	nodePointer = rfo.getHead();
 
 	        	while(nodePointer){
 
@@ -78,14 +78,13 @@ using std::ios;
 
 			while(getline(fileObject, palindrome)){
 
-				tempLine = removeUnwantedCharacters(tempLine);
-				tempLine = stringToLowerCase(tempLine);
+				tempLine = removeUnwantedCharacters(palindrome);
+				tempLine = stringToLowerCase(palindrome);
 				if(tempLine[0] <= 32){
 					continue;
 				}
 				if(checkPalindrome(tempStack, tempQueue)){
-					cout << "noice\n";
-					addNodeInAlphabeticalOrder(tempLine);
+					addNodeInAlphabeticalOrder(palindrome);
 
 				}
 

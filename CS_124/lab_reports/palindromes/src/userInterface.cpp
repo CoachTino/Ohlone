@@ -17,15 +17,8 @@ using std::string;
 
 	void userInterface::setUserName(){
 
-		cout << "\nHello, what is your name? "; //" (press return with an empty line when done)\n";
-
+		cout << "\nHello, what is your name? ";
 		getline(cin, name);
-		// string temp;
-		// while(getline(cin, temp) && !temp.empty()){
-
-		// 	name += " " + temp;
-		// }
-
 		greetTheUser();
 	}
 
@@ -69,8 +62,13 @@ using std::string;
 
 		cin.ignore();
 
-		cout << "Great! Please input your sentence or phrase: ";
-		getline(cin, userInputPalindrome);
+		cout << "Great! Please input your sentence or phrase: (press return with an empty line when done)\n";
+		// getline(cin, userInputPalindrome);
+		string temp;
+		while(getline(cin, temp) && !temp.empty()){
+
+			userInputPalindrome += " " + temp;
+		}
 		cout << "Thank you!\n";
 
 		linkedList stackList;
@@ -79,8 +77,7 @@ using std::string;
 		createStackFromUserInputPalindrome(stackList);
 		createQueueFromUserInputPalindrome(queueList);
 		
-		bool validPalindrome = checkPalindrome(stackList, queueList);
-		if(validPalindrome){
+		if(checkPalindrome(stackList, queueList)){
 			cout << "noice\n";
 		}
 		repeat();
@@ -96,24 +93,41 @@ using std::string;
 		cout << "\nYour choice: ";
 		validateUserInput(textFileOption);	
 
- 		fileInputAndOutput fileObject;
+ 		fileInputAndOutput readFileObject;
 
 		if(textFileOption == 1){
 		
-	 		fileObject.readFromFile(fileObject.getPalindromeSample());
-	 		fileObject.printList();
+	 		readFileObject.readFromFile(readFileObject.getPalindromeSample());
 
 		}else if(textFileOption == 2){
 
-	 		fileObject.readFromFile(fileObject.getTinosCoolPalindrome());
-	 		fileObject.printList();
+	 		readFileObject.readFromFile(readFileObject.getTinosCoolPalindrome());
+		}
+		createOptionalTextFileMenu(readFileObject);
+	}
+
+	void userInterface::createOptionalTextFileMenu(fileInputAndOutput &rfo){
+
+		char option;
+		string fileName;
+		cout << "Would you like to output the palindromes to a seperate text file? (y/n)\n";
+		cin >> option;
+
+		if(option != 'y' && option != 'Y' && option != 'n' && option != 'N'){
+
+			cout << "bruh you entered something all wrong. we just gon exit\n";
+
+		}else if(option == 'y' || option == 'Y'){
+			cout << "Enter a file name: ";
+			cin.ignore();
+			getline(cin, fileName);
+			fileInputAndOutput writeFileObject;
+			writeFileObject.writeToFile(rfo, fileName);
 		}
 		repeat();
 	}
 
 	void userInterface::createStackFromUserInputPalindrome(linkedList &sl){
-
-
 
 		string tempLine = userInputPalindrome;
 
@@ -124,7 +138,6 @@ using std::string;
 		
 			sl.addNodeAtBeginning(c);
 		}
-		// sl.printList();
 	}
 
 	void userInterface::createQueueFromUserInputPalindrome(linkedList &ql){
@@ -138,7 +151,6 @@ using std::string;
 		
 			ql.appendNode(c);
 		}
-		// ql.printList();
 	}
 
 	void userInterface::repeat(){
@@ -154,4 +166,5 @@ using std::string;
 		}else if(repeat == 'y' || repeat == 'Y'){
 			createMenu();
 		}
+		cout << "\nPeace out dude!\n";
 	}

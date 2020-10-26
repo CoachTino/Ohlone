@@ -22,7 +22,7 @@ using std::string;
 			const string getPalindromeSample();
 			const string getTinosCoolPalindrome();
 
-			void writeToFile(string);
+			void writeToFile(fileInputAndOutput &, string);
 			void readFromFile(string);
 
 	};

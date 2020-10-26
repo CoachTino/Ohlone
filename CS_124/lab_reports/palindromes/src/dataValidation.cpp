@@ -88,8 +88,6 @@ using std::endl;
 
 		// sl.printList();
 		// ql.printList();
-
-		cout << "\naight ima pause this at this point. just need to check if the palindrome is valid or not\n";
 		
 		return true;
 	}
