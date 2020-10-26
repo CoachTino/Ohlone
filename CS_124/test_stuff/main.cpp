@@ -7,7 +7,7 @@ using namespace std;
 
 	int main(){
 
-		mother mo;
+		//mother mo;
 		daughter doo;
 
 		return 0;
