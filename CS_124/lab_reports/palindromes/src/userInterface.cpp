@@ -36,6 +36,7 @@ using std::string;
 		cout << "or choose from some sample text files I have.\n";
 
 		createMenu();
+		cout << "\nPeace out dude!\n";
 	}
 
 	void userInterface::createMenu(){
@@ -63,13 +64,9 @@ using std::string;
 		cin.ignore();
 
 		cout << "Great! Please input your sentence or phrase: (press return with an empty line when done)\n";
-		// getline(cin, userInputPalindrome);
-		string temp;
-		while(getline(cin, temp) && !temp.empty()){
+		getline(cin, userInputPalindrome);
 
-			userInputPalindrome += " " + temp;
-		}
-		cout << "Thank you!\n";
+		cout << endl;
 
 		linkedList stackList;
 		linkedList queueList;
@@ -78,7 +75,10 @@ using std::string;
 		createQueueFromUserInputPalindrome(queueList);
 		
 		if(checkPalindrome(stackList, queueList)){
-			cout << "noice\n";
+			cout << userInputPalindrome;
+			cout << " is a palindrome! It reads the same forwards and backwards.\n";
+		}else{
+			cout << "Sorry buddy, \"" << userInputPalindrome << "\" is not a palindrome.\n";
 		}
 		repeat();
 	}
@@ -115,7 +115,7 @@ using std::string;
 
 		if(option != 'y' && option != 'Y' && option != 'n' && option != 'N'){
 
-			cout << "bruh you entered something all wrong. we just gon exit\n";
+			cout << "You entered an invalid option. Exiting the program.\n";
 
 		}else if(option == 'y' || option == 'Y'){
 			cout << "Enter a file name: ";
@@ -131,10 +131,9 @@ using std::string;
 
 		string tempLine = userInputPalindrome;
 
-		tempLine = stringToLowerCase(tempLine);
 		tempLine = removeUnwantedCharacters(tempLine);
 
-		for (char c: tempLine){
+		for(char c: tempLine){
 		
 			sl.addNodeAtBeginning(c);
 		}
@@ -144,7 +143,6 @@ using std::string;
 
 		string tempLine = userInputPalindrome;
 
-		tempLine = stringToLowerCase(tempLine);
 		tempLine = removeUnwantedCharacters(tempLine);
 
 		for (char c: tempLine){
@@ -156,15 +154,14 @@ using std::string;
 	void userInterface::repeat(){
 
 		char repeat;
-		cout << "Would you like to do another? (y/n)\n";
+		cout << "\nWould you like to do another? (y/n)\n";
 		cin >> repeat;
 
 		if(repeat != 'y' && repeat != 'Y' && repeat != 'n' && repeat != 'N'){
 
-			cout << "bruh you entered something all wrong. we just gon exit\n";
+			cout << "You entered an invalid option. Exiting the program...\n";
 
 		}else if(repeat == 'y' || repeat == 'Y'){
 			createMenu();
 		}
-		cout << "\nPeace out dude!\n";
 	}

@@ -75,21 +75,28 @@ using std::ios;
 
 			linkedList tempStack;
 			linkedList tempQueue;
-
+		
 			while(getline(fileObject, palindrome)){
-
+			
 				tempLine = removeUnwantedCharacters(palindrome);
-				tempLine = stringToLowerCase(palindrome);
 				if(tempLine[0] <= 32){
 					continue;
 				}
+							
+				createStackFromUserInputPalindrome(tempStack, tempLine);
+				createQueueFromUserInputPalindrome(tempQueue, tempLine);
+
 				if(checkPalindrome(tempStack, tempQueue)){
-					addNodeInAlphabeticalOrder(palindrome);
+					addNodeInAscendinglOrder(palindrome);
+					cout << "Success! was saved to a list in ascending order.\n\n";
 
+				}else{
+
+					cout << "Sorry buddy, is not a palindrome.\n\n";
 				}
-
 			}
 			fileObject.close();
+			
 		}else if(!fileObject){
 
 		    cout << "Error reading file!" << endl;

@@ -18,9 +18,10 @@
 
 			void addNodeAtBeginning(std::string);			// usage: stack
 			void addNodeAtBeginning(char);					// usage: stack				// overloaded
-			void addNodeInAlphabeticalOrder(std::string);
+			void addNodeInAscendinglOrder(std::string);
 			void appendNode(std::string);					// usage: queue
 			void appendNode(char);							// usage: queue				// overloaded
+			void removeNodeAtBeginning();
 			void printList();
 	};
 #endif

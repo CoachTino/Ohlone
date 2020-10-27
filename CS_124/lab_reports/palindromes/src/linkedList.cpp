@@ -62,9 +62,9 @@ using std::string;
 
         // set the new node to the head
         head = newNode;
-
 	}
-	void linkedList::addNodeInAlphabeticalOrder(string s){
+	
+	void linkedList::addNodeInAscendinglOrder(string s){
 
 		ListNode *newNode = new ListNode;
 		ListNode *nodePointer;
@@ -142,6 +142,20 @@ using std::string;
             }
             nodePointer->next = newNode;
         }
+	}
+
+	void linkedList::removeNodeAtBeginning(){
+
+		ListNode *nodePointer;
+	    if(!head){
+
+	    	cout << "\nThe list is empty.\n";
+	    }else{
+
+	    	nodePointer = head;
+	    	head = nodePointer->next;
+	    	delete nodePointer;
+	    }
 	}
 
 	void linkedList::printList(){

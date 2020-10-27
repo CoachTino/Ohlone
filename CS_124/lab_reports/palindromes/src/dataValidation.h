@@ -11,11 +11,12 @@ using std::string;
 
 		public:
 
-			string stringToLowerCase(string);
 			string removeUnwantedCharacters(string);
 			void validateUserInput(int &);
 			bool checkPalindrome(linkedList &, linkedList &);
-
+		
+			void createStackFromUserInputPalindrome(linkedList &, string);		
+			void createQueueFromUserInputPalindrome(linkedList &, string);
 	};
 
 #endif

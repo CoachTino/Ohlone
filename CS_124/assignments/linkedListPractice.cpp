@@ -72,6 +72,19 @@ using std::string;
         head = newNode;
       }
 
+  void removeNodeAtBeginning(){
+
+    if(!head){
+
+      cout << "\nThe list is empty.\n";
+    }else{
+
+      ListNode *nodePointer = head;
+      head = nodePointer->next;
+      delete nodePointer;
+    }
+  }
+
       void print(){
 
         // to traverse the list  
@@ -129,7 +142,9 @@ using std::string;
         cout << "\tMENU";
         cout << "\n1 - Add node";
         cout << "\n2 - Print list";
-        cout << "\n3 - Exit";
+        cout << "\n3 - remove node";
+        cout << "\n4 - Exit";
+
 
         // take user input
         cout << "\n\nEnter a menu option: ";
@@ -145,14 +160,17 @@ using std::string;
               llo.add_at_begin(word);
             break;
           }
-
-          // or this
           case 2:{
             llo.print();
+            break;
           }  
+          case 3:{
+            llo.removeNodeAtBeginning();
+            break;
+          } 
         }
         // conditional for looping based on user input
-      }while(choice == 1 || choice == 2);
+      }while(choice == 1 || choice == 2 || choice == 3);
 
       // printout to let the user know program is ending
       cout << "\nProgram is finished. Later dude...\n";

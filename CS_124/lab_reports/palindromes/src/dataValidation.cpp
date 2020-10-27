@@ -2,26 +2,12 @@
 #include <locale>		// std::locale, std::tolower
 
 #include "dataValidation.h"
-#include "linkedList.h"
+#include "ListNode.h"
 
 using std::string;
 using std::cout;
 using std::cin;
 using std::endl;
-
-	string dataValidation::stringToLowerCase(string str){
-
-		string temp = str;
-	    std::locale loc;
-
-		for(int i = 0; i < temp.length(); i++){
-
-			temp[i] = std::tolower(str[i], loc);
-		}
-
-		return temp;
-	}
-
 
 	string dataValidation::removeUnwantedCharacters(string str){
 
@@ -31,12 +17,15 @@ using std::endl;
 
 			// ascii values found at
 			// asciitable.com
-			if((str[i] >= 97 && str[i] <= 122) || (str[i] >= 48 && str[i] <= 57)){
+			if((str[i] > 96 && str[i] < 123) || (str[i] > 47 && str[i] < 58) || (str[i] > 64 && str[i] < 91)){
 
+				if(str[i] > 58 && str[i] < 96){
+					str[i] += 32;
+					// cout << "it frking worked eh\n";
+				}
 				tempString += str[i];
 			}
 		}
-
 		return tempString;
 	}
 
@@ -86,8 +75,48 @@ using std::endl;
 
 	bool dataValidation::checkPalindrome(linkedList &sl, linkedList &ql){
 
-		// sl.printList();
-		// ql.printList();
+		ListNode *stackPointer = sl.getHead();
+		ListNode *queuePointer = ql.getHead();
+
+		string stackTempString;
+		string queueTempSTring;
+
+		bool result = true;
+
+		while(stackPointer && queuePointer){
+
+			if(!(stackPointer->data == queuePointer->data)){
+				result = false;
+			}
+			stackPointer = stackPointer->next;
+			queuePointer = queuePointer->next;
+
+			sl.removeNodeAtBeginning();
+			ql.removeNodeAtBeginning();
+		}
+		return result;
+	}
+
+	void dataValidation::createStackFromUserInputPalindrome(linkedList &sl, string s){
+
+		string tempLine = s;
+
+		tempLine = removeUnwantedCharacters(tempLine);
+
+		for(char c: tempLine){
 		
-		return true;
+			sl.addNodeAtBeginning(c);
+		}
+	}
+
+	void dataValidation::createQueueFromUserInputPalindrome(linkedList &ql, string s){
+
+		string tempLine = s;
+
+		tempLine = removeUnwantedCharacters(tempLine);
+
+		for (char c: tempLine){
+		
+			ql.appendNode(c);
+		}
 	}
