@@ -64,7 +64,7 @@ using std::ios;
 		}
 	}
 
-	void fileInputAndOutput::readFromFile(string fn){
+	bool fileInputAndOutput::readFromFile(string fn){
 		
 		fstream fileObject;
 		string palindrome, tempLine;
@@ -88,12 +88,16 @@ using std::ios;
 
 				if(checkPalindrome(tempStack, tempQueue)){
 					addNodeInAscendinglOrder(palindrome);
-					cout << "Success! was saved to a list in ascending order.\n\n";
 
-				}else{
-
-					cout << "Sorry buddy, is not a palindrome.\n\n";
 				}
+			}
+			if(getHead()){
+
+				cout << "Here is a list of the palindromes that were written to the file:\n";
+				printList();
+			}else if(!getHead()){
+				cout << "Sorry, this file had no palindromes to save.\n";
+				return false;
 			}
 			fileObject.close();
 			
@@ -102,4 +106,6 @@ using std::ios;
 		    cout << "Error reading file!" << endl;
 		    exit(EXIT_FAILURE);
 		}
+
+		return true;
 	}

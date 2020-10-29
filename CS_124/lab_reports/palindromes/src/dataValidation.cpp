@@ -120,3 +120,40 @@ using std::endl;
 			ql.appendNode(c);
 		}
 	}
+
+	string dataValidation::validateStrings(string str){
+
+		int attempts = 0;
+
+		try{
+			while(str.empty()){
+				if(attempts == 3){
+
+				 	throw 42;
+				}
+				cout << "You didn't enter anything. Please try again: ";
+				getline(cin, str);
+				attempts++;			
+			}
+		}catch(int x){
+		
+			cout << "\nYou failed to enter a valid option 3 times in a row. Exiting the program.\n";
+			exit(EXIT_FAILURE);
+		}
+		return str;
+	}
+
+	bool dataValidation::validateYesOrNo(char option){
+		
+		if(option != 'y' && option != 'Y' && option != 'n' && option != 78){
+
+			cout << "You entered an invalid option. Exiting the program.\n";
+			return false;
+		
+		}else if(option == 'n' || option == 78){
+
+			return false;
+		}
+
+		return true;
+	}

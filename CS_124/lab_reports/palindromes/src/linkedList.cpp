@@ -173,7 +173,7 @@ using std::string;
 
           // start at the beginning of the list
           nodePointer = head;
-          cout << "\nThe items in the list are: \n";
+          // cout << "\nThe items in the list are: \n";
 
           // loop while nodePointer != NULL
           while(nodePointer){

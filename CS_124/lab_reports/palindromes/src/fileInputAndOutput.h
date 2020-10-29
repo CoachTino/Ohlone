@@ -23,7 +23,7 @@ using std::string;
 			const string getTinosCoolPalindrome();
 
 			void writeToFile(fileInputAndOutput &, string);
-			void readFromFile(string);
+			bool readFromFile(string);
 
 	};
 

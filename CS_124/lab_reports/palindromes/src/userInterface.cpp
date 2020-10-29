@@ -19,6 +19,7 @@ using std::string;
 
 		cout << "\nHello, what is your name? ";
 		getline(cin, name);
+		name = validateStrings(name);
 		greetTheUser();
 	}
 
@@ -42,7 +43,7 @@ using std::string;
 	void userInterface::createMenu(){
 
 		cout << "\nWould you like to:" << endl;
-		cout << "1: Type in a sentence or a phrace to be checked\n";
+		cout << "1: Type in a sentence or a phrase to be checked\n";
 		cout << "2: Use examples from text files that I have\n";
 		cout << "3: Quit the program\n";
 
@@ -63,8 +64,9 @@ using std::string;
 
 		cin.ignore();
 
-		cout << "Great! Please input your sentence or phrase: (press return with an empty line when done)\n";
+		cout << "Great! Please input your sentence or phrase:\n";
 		getline(cin, userInputPalindrome);
+		userInputPalindrome = validateStrings(userInputPalindrome);
 
 		cout << endl;
 
@@ -94,18 +96,22 @@ using std::string;
 		validateUserInput(textFileOption);	
 
  		fileInputAndOutput readFileObject;
+ 		bool savedPalindromes = false;
 
 		if(textFileOption == 1){
 		
-	 		readFileObject.readFromFile(readFileObject.getPalindromeSample());
+	 		savedPalindromes = readFileObject.readFromFile(readFileObject.getPalindromeSample());
 
 		}else if(textFileOption == 2){
 
-	 		readFileObject.readFromFile(readFileObject.getTinosCoolPalindrome());
+	 		savedPalindromes = readFileObject.readFromFile(readFileObject.getTinosCoolPalindrome());
 		}
-		createOptionalTextFileMenu(readFileObject);
+		if(savedPalindromes){
+			createOptionalTextFileMenu(readFileObject);
+		}
+		repeat();
 	}
-
+	
 	void userInterface::createOptionalTextFileMenu(fileInputAndOutput &rfo){
 
 		char option;
@@ -113,18 +119,14 @@ using std::string;
 		cout << "Would you like to output the palindromes to a seperate text file? (y/n)\n";
 		cin >> option;
 
-		if(option != 'y' && option != 'Y' && option != 'n' && option != 'N'){
-
-			cout << "You entered an invalid option. Exiting the program.\n";
-
-		}else if(option == 'y' || option == 'Y'){
+		if(validateYesOrNo(option)){
 			cout << "Enter a file name: ";
 			cin.ignore();
 			getline(cin, fileName);
+			fileName = validateStrings(fileName);
 			fileInputAndOutput writeFileObject;
 			writeFileObject.writeToFile(rfo, fileName);
 		}
-		repeat();
 	}
 
 	void userInterface::createStackFromUserInputPalindrome(linkedList &sl){
@@ -157,11 +159,7 @@ using std::string;
 		cout << "\nWould you like to do another? (y/n)\n";
 		cin >> repeat;
 
-		if(repeat != 'y' && repeat != 'Y' && repeat != 'n' && repeat != 'N'){
-
-			cout << "You entered an invalid option. Exiting the program...\n";
-
-		}else if(repeat == 'y' || repeat == 'Y'){
+		if(validateYesOrNo(repeat)){
 			createMenu();
 		}
 	}

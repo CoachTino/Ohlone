@@ -17,6 +17,9 @@ using std::string;
 		
 			void createStackFromUserInputPalindrome(linkedList &, string);		
 			void createQueueFromUserInputPalindrome(linkedList &, string);
+
+			string validateStrings(string);
+			bool validateYesOrNo(char);
 	};
 
 #endif
