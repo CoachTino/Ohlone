@@ -89,7 +89,7 @@ using std::string;
 
 		cout << "\nThis is fun! The Text files I have are:" << endl;
 		cout << "1: PalindromeSamples.txt\n";
-		cout << "2: tinosCoolPalindromes.txt\n";
+		cout << "2: PalindromeTest2.txt\n";
 		cout << "3: Quit the program\n";
 
 		cout << "\nYour choice: ";

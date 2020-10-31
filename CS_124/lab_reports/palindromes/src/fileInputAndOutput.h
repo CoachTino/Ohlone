@@ -11,7 +11,7 @@ using std::string;
 		private:
 
 			const string samplePalindromes = "PalindromeSamples.txt";
-			const string tinosSamplePalindromes = "tinosCoolPalindromes.txt";
+			const string tinosSamplePalindromes = "PalindromeTest2.txt";
 			string userInputFileName;
 
 		public:

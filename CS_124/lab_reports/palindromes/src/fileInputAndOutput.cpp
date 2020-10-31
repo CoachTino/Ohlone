@@ -93,7 +93,7 @@ using std::ios;
 			}
 			if(getHead()){
 
-				cout << "Here is a list of the palindromes that were written to the file:\n";
+				cout << "Here is a list of the palindromes that were written to the file:\n\n";
 				printList();
 			}else if(!getHead()){
 				cout << "Sorry, this file had no palindromes to save.\n";
