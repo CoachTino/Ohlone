@@ -1,8 +1,8 @@
 #include <iostream>
 #include <locale>		// std::locale, std::tolower
 
-#include "dataValidation.h"
-#include "ListNode.h"
+#include "vleia_dataValidation.h"
+#include "vleia_ListNode.h"
 
 using std::string;
 using std::cout;
@@ -21,7 +21,6 @@ using std::endl;
 
 				if(str[i] > 58 && str[i] < 96){
 					str[i] += 32;
-					// cout << "it frking worked eh\n";
 				}
 				tempString += str[i];
 			}
@@ -149,7 +148,9 @@ using std::endl;
 
 			cout << "You entered an invalid option. Exiting the program.\n";
 			return false;
-		
+	
+		// ascii values found at
+		// asciitable.com
 		}else if(option == 'n' || option == 78){
 
 			return false;
