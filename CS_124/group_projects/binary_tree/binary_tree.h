@@ -69,7 +69,7 @@ public:
    */
    BinaryTree right() const;
 
-   void insert(string root_data);
+   BinaryTree getRight(string, BinaryTree) const ;
 
 private:
    /**

@@ -70,13 +70,9 @@ int main()
             // cout << question_tree.data() << endl;
 
             // trying to add a new node with the animal entered from console
-            question_tree.insert(response);
-
-            // cout << question_tree.right() << endl;
-
 
             // // print out the new node
-            cout << "It is a " << question_tree.data() << ".\n";
+            // cout << "It is a " << question_tree.data() << ".\n";
 
          }  
 
@@ -101,43 +97,4 @@ int main()
          }         
       }
    }
-
-   // bool test = false;
-
-   // while (!test)
-   // {
-   //    BinaryTree newLeft = question_tree.left();
-   //    BinaryTree newRight = question_tree.right();
-
-   //    // making the guess
-   //    if (left.empty() && right.empty())
-   //    {
-         
-   //       // ask another question
-   //       cout << "Is it a " << question_tree.data() << "? (y/n): ";
-   //       cin >> response;
-   //       test = true;
-   //    }  
-
-         
-      
-   //    else
-   //    {
-   //       do
-   //       {
-   //          cout << question_tree.data() << " (y/n): ";
-   //          cin >> response;
-   //       } 
-   //       while (response != "y" && response != "n");
-
-   //       if (response == "y")
-   //       {
-   //          question_tree = left;         
-   //       }
-   //       else
-   //       {
-   //          question_tree = right;         
-   //       }         
-   //    }
-   // }
 }

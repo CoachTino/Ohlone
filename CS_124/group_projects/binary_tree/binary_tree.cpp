@@ -50,13 +50,16 @@ BinaryTree BinaryTree::right() const
    return result;
 }
 
-void BinaryTree::insert(string root_data){ 
+BinaryTree BinaryTree::getRight(string s, BinaryTree x) const 
+{
 
-   root = new Node;
-   root->data = root_data;
-   root->left = nullptr;
-   root->right = nullptr;
+   Node* newNode = new Node;
+   newNode->data = s;
+   newNode->left = nullptr;
+   newNode->right = nullptr;
 
+   BinaryTree result;
+   result.root = x.right;
 
-   // object->right = root;
+   return result;
 }
