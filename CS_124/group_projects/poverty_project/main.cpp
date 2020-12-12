@@ -271,7 +271,7 @@ void waitlist(string fileName, string userName){
   cin >> reply;
   if(reply=="y"){
     l.print(head);
-    tree.displayInOrder();
+    // tree.displayInOrder();
   }
 }
 
